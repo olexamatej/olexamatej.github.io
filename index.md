@@ -1,5 +1,5 @@
 
-### I kinda like cybersecurity 🕵️ 
+I kinda like cybersecurity 🕵️ 
 
 ## CTF writeups 🚩
 Here are some of my CTF solutions and writeups 🔥✍️:
