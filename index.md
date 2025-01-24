@@ -1,3 +1,6 @@
+
+I kinda like cybersecurity 🕵️ 
+
 ## CTF writeups 🚩
 Here are some of my CTF solutions and writeups 🔥✍️:
 - [webhacking.kr](https://github.com/olexamatej/webhacking.kr) *(current favourite)*
