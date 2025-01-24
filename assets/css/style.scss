@@ -1,13 +1,10 @@
 @import "{{ site.theme }}";
 
 header.page-header {
-  padding: 0.5rem 0; 
-
-  .project-name {
-    font-size: 1.25rem; 
+    display: none;
   }
-
-  .project-tagline {
-    font-size: 0.875rem; 
+  
+  h1 {
+    font-size: 2rem; /* Adjust the size of your custom header */
+    color: #333; /* Adjust the color */
   }
-}
