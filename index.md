@@ -1,5 +1,6 @@
 
-I kinda like cybersecurity 🕵️ 
+
+I’m a student at **Brno University of Technology**, and I like cybersecurity 🕵️.
 
 ## CTF writeups 🚩
 Here are some of my CTF solutions and writeups 🔥✍️:
