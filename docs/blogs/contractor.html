@@ -212,7 +212,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Stack buffer overflows are a classic vulnerability class, but modern defenses like Stack Canaries, NX (Non-Executable Stack), and PIE (Position Independent Executable) significantly complicate exploitation. Standard overflows that overwrite the return address (RIP) often corrupt the canary value placed below it, causing the program to detect the tampering and terminate via <code>__stack_chk_fail</code>. This post delves into stack exploitation techniques demonstrated in the Hack The Box CyberApocalypse 2025 CTF (March 21-26). Specifically, we analyze the <code>contractor</code> challenge to illustrate how a specific stack layout and a vulnerability in pointer usage can be combined to bypass stack canaries <em>without</em> leaking the canary value itself, achieving control flow hijacking by corrupting a different stack-based pointer <em>during</em> the overflow.</p>
-<p>This analysis focuses on stack vulnerabilities. For an example of heap exploitation from the same CTF, see the companion post on <a href="link-to-strategist-post.md">Tcache Poisoning via Off-by-One in the ‘Strategist’ challenge</a>.</p>
 </section>
 <section id="binary-analysis-context-scenario" class="level2">
 <h2 class="anchored" data-anchor-id="binary-analysis-context-scenario">Binary Analysis Context &amp; Scenario</h2>
