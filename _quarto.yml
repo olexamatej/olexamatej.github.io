@@ -18,6 +18,6 @@ website:
 
 format:
   html:
-    theme: minty # Change from 'cosmo' to another theme
+    theme: journal
     css: styles.css
     toc: true
