@@ -1,0 +1,27 @@
+---
+title: "Home"
+---
+
+I'm a student at **Brno University of Technology**, and I like cybersecurity 🕵️.
+
+## CTF writeups 🚩
+Here are some of my CTF solutions and writeups 🔥✍️:  
+- [webhacking.kr](https://github.com/olexamatej/webhacking.kr)  
+- [picoCTF](https://github.com/olexamatej/picoctf)  
+- [pwnable.kr](https://github.com/olexamatej/pwnable.kr)  
+- [LACTF 2025](https://github.com/olexamatej/lactf2025)  
+
+For detailed walkthroughs and explanations of my favourite challenges, check out my [projects](/blogs/) where I dive deeper into interesting techniques and solutions.
+
+## Projects
+Check out my [GitHub profile](https://github.com/olexamatej) for all my ongoing and completed projects.
+
+Some of my chosen projects and CTF writeups are explained in more detail in the [blog](/blogs/) section, where I share my approach and the techniques I used.
+
+## Connect with Me
+- 🌐 [GitHub Profile](https://github.com/olexamatej)
+- 💼 [LinkedIn Profile](https://www.linkedin.com/in/matej-olexa-0b7883222/)
+- 📧 Email: [olexa.matej@gmail.com](mailto:olexa.matej@gmail.com)
+
+---
+**Thanks for stopping by!** 🚀

@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Matej Olexa"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blogs/index.qmd
+        text: Blog
+    right:
+      - icon: github
+        href: https://github.com/olexamatej
+      - icon: linkedin
+        href: https://www.linkedin.com/in/matej-olexa-0b7883222/
+
+format:
+  html:
+    theme: minty # Change from 'cosmo' to another theme
+    css: styles.css
+    toc: true
