@@ -11,7 +11,7 @@ Here are some of my CTF solutions and writeups 🔥✍️:
 - [pwnable.kr](https://github.com/olexamatej/pwnable.kr)  
 - [LACTF 2025](https://github.com/olexamatej/lactf2025)  
 
-For detailed walkthroughs and explanations of my favourite challenges, check out my [projects](/blogs/) where I dive deeper into interesting techniques and solutions.
+For detailed walkthroughs and explanations of my favourite challenges, check out my [projects](https://github.com/olexamatej?tab=repositories) where I dive deeper into interesting techniques and solutions.
 
 ## Projects
 Check out my [GitHub profile](https://github.com/olexamatej) for all my ongoing and completed projects.
