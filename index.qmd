@@ -10,8 +10,11 @@ Here are some of my CTF solutions and writeups 🔥✍️:
 - [picoCTF](https://github.com/olexamatej/picoctf)  
 - [pwnable.kr](https://github.com/olexamatej/pwnable.kr)  
 - [LACTF 2025](https://github.com/olexamatej/lactf2025)  
+- [misc-ctfs](https://github.com/olexamatej/misc-ctfs) — a mixture of CTFs where I didn’t feel like writeupping many challenges, but still contributed and placed somewhere
 
-For detailed walkthroughs and explanations of my favourite challenges, check out my [projects](/blogs/) where I dive deeper into interesting techniques and solutions.
+For deeper walkthroughs of two of my favourite challenges from **Cyber Apocalypse 2025** (where we placed in the top 2%), check out these posts. I didn’t have time to finish the other writeups, but these go into the techniques and thought process I followed:
+- 🛠️ [contractor.html](https://olexamatej.github.io/blogs/contractor.html)  
+- ♟️ [strategist.html](https://olexamatej.github.io/blogs/strategist.html)
 
 ## Projects
 Check out my [GitHub profile](https://github.com/olexamatej) for all my ongoing and completed projects.

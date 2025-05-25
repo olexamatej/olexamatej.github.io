@@ -5,7 +5,7 @@ date: "2025-05-01" # Updated date
 categories: [pwn, cyberapocalypse2025, heap]
 ---
 
-# Heap Exploitation Deep Dive: Tcache Poisoning via Off-by-One in 'Strategist'
+## Introduction 
 
 Heap exploitation often involves subtle vulnerabilities that corrupt metadata, leading to powerful control over memory allocation. This post explores heap exploitation techniques using the `strategist` challenge from Hack The Box CyberApocalypse 2025 (March 21-26) as a case study. We'll examine how an off-by-one heap overflow vulnerability discovered in the binary was leveraged to perform a Tcache poisoning attack, ultimately leading to arbitrary code execution by overwriting `__free_hook`.
 
