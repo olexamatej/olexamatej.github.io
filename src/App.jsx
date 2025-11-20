@@ -54,8 +54,12 @@ function App() {
             <ExperienceItem 
               title="BLE Security Researcher" 
               company="Security@FIT" 
-              period="Sept 2023 - Present"
-              description="Co-authored research on Parallel BLE Advertising Monitoring and developed multi-sniffer probes using ESP32. Extended research for Bachelor Thesis using neural networks (MLPs and 1D CNNs) for real-time BLE connection detection. Awarded at EXCEL@FIT 2025."
+              period="Sept 2023 - Sept 2025"
+              description={
+                <>
+                  Co-authored research on Parallel BLE Advertising Monitoring and developed multi-sniffer probes using ESP32. Extended research for <a href="https://www.vut.cz/studenti/zav-prace/detail/164339?zp_id=164339" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline">Bachelor Thesis</a> using neural networks (MLPs and 1D CNNs) for real-time BLE connection detection. Awarded at EXCEL@FIT 2025. To be presented at SantaCrypt 2025.
+                </>
+              }
             />
           </div>
         </section>
