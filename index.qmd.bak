@@ -1,0 +1,30 @@
+---
+title: "Matej Olexa"
+about:
+  template: jolla
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/olexamatej
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/matej-olexa-0b7883222/
+    - icon: envelope
+      text: Email
+      href: mailto:olexa.matej@gmail.com
+---
+
+I am a security enthusiast and a member of **Security@FIT** at Brno University of Technology.  
+I enjoy playing CTFs and breaking things to see how they work.
+
+## CTF Writeups 🚩
+
+- [webhacking.kr](https://github.com/olexamatej/webhacking.kr)
+- [picoCTF](https://github.com/olexamatej/picoctf)
+- [pwnable.kr](https://github.com/olexamatej/pwnable.kr)
+- [LACTF 2025](https://github.com/olexamatej/lactf2025)
+- [Cyber Apocalypse 2025](https://olexamatej.github.io/blogs/) (Top 2%)
+
+## Projects
+
+Check out my [GitHub](https://github.com/olexamatej) for my latest work.
