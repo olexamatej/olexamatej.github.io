@@ -1,0 +1,254 @@
+/* css styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Fira+Code&display=swap');
+
+:root {
+  --bg-color: #020617; /* Slate-950 */
+  --text-color: #e2e8f0; /* Slate-200 */
+  --heading-color: #f8fafc; /* Slate-50 */
+  --accent-color: #34d399; /* Emerald-400 */
+  --accent-hover: #10b981; /* Emerald-500 */
+  --muted-color: #94a3b8; /* Slate-400 */
+  --border-color: #1e293b; /* Slate-800 */
+  --code-bg: #1e293b; /* Slate-800 */
+  --blockquote-border: #34d399; /* Emerald-400 */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+/* Match React App Container: max-w-3xl mx-auto px-6 py-20 */
+.quarto-container {
+  max-width: 64rem !important; /* 5xl - Wider to match code blocks */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important; /* px-6 */
+  padding-right: 1.5rem !important; /* px-6 */
+  padding-top: 5rem !important; /* py-20 */
+  overflow: visible !important;
+}
+
+/* Navbar adjustments to blend in */
+#quarto-header {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  opacity: 0.95;
+}
+
+.navbar {
+  background-color: var(--bg-color) !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--heading-color) !important;
+}
+
+.nav-link {
+  color: var(--muted-color) !important;
+  font-family: 'Fira Code', monospace; /* Match the mono font in header */
+  font-size: 0.875rem;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--accent-color) !important;
+}
+
+/* Typography matching */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em; /* tracking-tight */
+}
+
+h1.title {
+  font-size: 2.25rem; /* text-4xl */
+  line-height: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--muted-color); /* text-slate-400 */
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--blockquote-border);
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  color: var(--muted-color);
+  font-style: italic;
+  background: transparent !important;
+}
+
+/* Code blocks - Force Dark Theme */
+pre {
+  background-color: #1e293b !important; /* Slate-800 */
+  border: 1px solid #334155 !important; /* Slate-700 */
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  overflow-x: auto !important;
+  color: #e2e8f0 !important; /* Slate-200 */
+}
+
+/* Inline code */
+code {
+  font-family: 'Fira Code', monospace !important;
+  color: #f472b6 !important; /* Pink-400 */
+  background-color: rgba(30, 41, 59, 0.5) !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875em !important;
+}
+
+/* Reset for code inside pre */
+pre > code,
+code.sourceCode {
+  background-color: transparent !important;
+  padding: 0 !important;
+  color: #e2e8f0 !important; /* Force light text color */
+  border: none !important;
+  font-size: inherit !important;
+}
+
+/* Ensure line spans inherit the light color */
+code.sourceCode > span {
+  color: inherit !important;
+}
+
+/* Quarto Source Code Container */
+div.sourceCode {
+  background-color: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 0.5rem !important;
+  margin-bottom: 1.5rem !important;
+  color: #e2e8f0 !important; /* Ensure default text color is light */
+}
+
+div.sourceCode pre.sourceCode {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 1rem !important;
+  margin: 0 !important;
+  color: inherit !important;
+}
+
+div.sourceCode code,
+div.sourceCode span {
+  color: inherit; /* Allow inheritance unless overridden */
+}
+
+/* Syntax Highlighting - Force High Contrast Dark Theme Colors */
+code span.kw { color: #c084fc !important; font-weight: bold !important; } /* Keywords - Purple */
+code span.dt { color: #f472b6 !important; } /* Types - Pink */
+code span.dv { color: #fbbf24 !important; } /* Numbers - Amber */
+code span.bn { color: #fbbf24 !important; } /* BaseN - Amber */
+code span.fl { color: #fbbf24 !important; } /* Floats - Amber */
+code span.ch { color: #fbbf24 !important; } /* Chars - Amber */
+code span.st { color: #a3e635 !important; } /* Strings - Lime */
+code span.co { color: #94a3b8 !important; font-style: italic !important; } /* Comments - Slate-400 */
+code span.ot { color: #38bdf8 !important; } /* Other - Sky */
+code span.al { color: #ef4444 !important; font-weight: bold !important; } /* Alerts - Red */
+code span.fu { color: #60a5fa !important; } /* Functions - Blue */
+code span.er { color: #ef4444 !important; font-weight: bold !important; } /* Errors - Red */
+code span.wa { color: #f59e0b !important; font-weight: bold !important; } /* Warnings - Amber */
+code span.cn { color: #e879f9 !important; } /* Constants - Fuchsia */
+code span.sc { color: #e879f9 !important; } /* Special Char - Fuchsia */
+code span.vs { color: #a3e635 !important; } /* Verbatim String - Lime */
+code span.ss { color: #a3e635 !important; } /* Special String - Lime */
+code span.im { color: #c084fc !important; } /* Imports - Purple */
+code span.va { color: #22d3ee !important; } /* Variables - Cyan-400 */
+code span.cf { color: #c084fc !important; font-weight: bold !important; } /* Control Flow - Purple */
+code span.op { color: #38bdf8 !important; } /* Operators - Sky */
+code span.bu { color: #fbbf24 !important; } /* Builtins - Amber */
+code span.ex { color: #f472b6 !important; } /* Extensions - Pink */
+code span.pp { color: #f472b6 !important; } /* Preprocessor - Pink */
+code span.at { color: #f472b6 !important; } /* Attributes - Pink */
+code span.do { color: #94a3b8 !important; font-style: italic !important; } /* Documentation - Slate-400 */
+code span.an { color: #94a3b8 !important; font-weight: bold !important; font-style: italic !important; } /* Annotations */
+code span.cv { color: #94a3b8 !important; font-weight: bold !important; font-style: italic !important; } /* Comment Var */
+code span.in { color: #94a3b8 !important; font-weight: bold !important; font-style: italic !important; } /* Information */
+
+/* Quarto specific overrides */
+.quarto-dark {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Hide the sidebar toggle if present */
+.quarto-secondary-nav {
+  display: none;
+}
+
+/* Metadata section */
+.quarto-title-meta {
+  color: var(--muted-color);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.875rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+.quarto-title-meta-heading {
+  color: var(--text-color);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.quarto-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin-right: 0.5rem;
+  background-color: rgba(52, 211, 153, 0.1); /* Emerald-400/10 */
+  color: var(--accent-color);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--muted-color);
+  margin-bottom: 2rem;
+  line-height: 1.75;
+}
+
+/* Search Results */
+#quarto-search-results {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+}
+
+.search-result-item {
+  padding: 0.5rem;
+}
+
+.search-result-item:hover {
+  background-color: var(--code-bg);
+}
