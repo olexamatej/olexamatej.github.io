@@ -1,0 +1,176 @@
+/*-- scss:defaults --*/
+$body-bg: #020617;
+$body-color: #e2e8f0;
+$link-color: #34d399;
+$link-hover-color: #10b981;
+
+/*-- scss:rules --*/
+
+// Blog listing improvements
+.quarto-listing {
+  .list {
+    .quarto-grid-item {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(51, 65, 85, 0.5);
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        border-color: rgba(52, 211, 153, 0.5);
+        background: rgba(15, 23, 42, 0.8);
+        transform: translateY(-2px);
+      }
+      
+      .listing-title {
+        color: #f1f5f9;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        
+        a {
+          color: #f1f5f9;
+          text-decoration: none;
+          
+          &:hover {
+            color: #34d399;
+          }
+        }
+      }
+      
+      .listing-description {
+        color: #94a3b8;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+      
+      .listing-date {
+        color: #64748b;
+        font-size: 0.875rem;
+        font-family: monospace;
+      }
+      
+      .listing-categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        
+        .listing-category {
+          background: rgba(52, 211, 153, 0.1);
+          color: #34d399;
+          padding: 0.25rem 0.75rem;
+          border-radius: 9999px;
+          font-size: 0.75rem;
+          font-family: monospace;
+          border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+      }
+    }
+  }
+}
+
+// Category sidebar
+.quarto-listing-category {
+  .category {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: rgba(15, 23, 42, 0.8);
+      border-color: rgba(52, 211, 153, 0.5);
+    }
+    
+    &.active {
+      background: rgba(52, 211, 153, 0.1);
+      border-color: #34d399;
+      color: #34d399;
+    }
+    
+    .quarto-category-count {
+      color: #64748b;
+      font-size: 0.875rem;
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+// Title block
+#title-block-header {
+  margin-bottom: 2rem;
+  
+  .title {
+    color: #f1f5f9;
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .lead {
+    color: #94a3b8;
+    font-size: 1.125rem;
+    line-height: 1.75;
+  }
+}
+
+// Navbar styling
+.navbar {
+  background: rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+  
+  .navbar-brand {
+    color: #f1f5f9;
+    font-weight: 700;
+    
+    &:hover {
+      color: #34d399;
+    }
+  }
+  
+  .nav-link {
+    color: #94a3b8;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: #34d399;
+    }
+    
+    &.active {
+      color: #34d399;
+    }
+  }
+}
+
+// Content area
+#quarto-content {
+  background: #020617;
+  min-height: 100vh;
+}
+
+// Search and filter UI
+.quarto-listing-search {
+  margin-bottom: 1.5rem;
+  
+  input {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(51, 65, 85, 0.5);
+    color: #e2e8f0;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    
+    &:focus {
+      border-color: #34d399;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.1);
+    }
+    
+    &::placeholder {
+      color: #64748b;
+    }
+  }
+}

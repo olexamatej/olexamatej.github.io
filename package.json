@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "quarto render blogs/ && vite build",
+    "build:blogs": "quarto render blogs/",
+    "build:site": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {

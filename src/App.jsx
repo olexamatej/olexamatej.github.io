@@ -170,12 +170,12 @@ function App() {
           <div className="space-y-4">
             <WriteupLink 
               title="Cyber Apocalypse 2025: Contractor"
-              category="Web Exploitation"
+              category="Pwn / Stack Exploitation"
               link="/blogs/contractor.html"
             />
             <WriteupLink 
               title="Cyber Apocalypse 2025: Strategist"
-              category="Game Hacking / Reverse Engineering"
+              category="Pwn / Heap Exploitation"
               link="/blogs/strategist.html"
             />
           </div>

@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'docs',
-    emptyOutDir: true,
+    emptyOutDir: false, // Don't wipe out the blogs
   }
 })
