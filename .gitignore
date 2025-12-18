@@ -1,9 +1,8 @@
 # Dependencies
 node_modules/
 
-# Build artifacts
+# Build artifacts (temporary during build)
 public/blogs/
-docs/
 
 # Old Quarto files (no longer used)
 /.quarto/
