@@ -1,10 +1,28 @@
 import React from 'react';
 import { Github, Linkedin, Mail, Terminal, Cpu, Shield, ExternalLink, FileText, Trophy } from 'lucide-react';
 
+function NavLink({ href, children }) {
+  return (
+    <a 
+      href={href} 
+      className="text-slate-300 hover:text-emerald-400 transition-colors font-semibold"
+    >
+      {children}
+    </a>
+  );
+}
+
 function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30">
       <div className="max-w-3xl mx-auto px-6 py-20">
+        {/* Navigation */}
+        <nav className="mb-12 flex gap-6">
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/index-blogs.html">Blog</NavLink>
+          <NavLink href="/writeups.html">CTF Writeups</NavLink>
+        </nav>
+        
         {/* Header */}
         <header className="mb-16">
           <h1 className="text-4xl font-bold text-white mb-4 tracking-tight">Matej Olexa</h1>
@@ -33,6 +51,7 @@ function App() {
             <SocialLink href="https://github.com/olexamatej" icon={<Github className="w-5 h-5" />} label="GitHub" />
             <SocialLink href="https://www.linkedin.com/in/matej-olexa" icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" />
             <SocialLink href="mailto:olexa.matej@gmail.com" icon={<Mail className="w-5 h-5" />} label="Email" />
+            <SocialLink href="/writeups.html" icon={<Terminal className="w-5 h-5" />} label="CTF Writeups" />
           </div>
         </header>
 
@@ -132,18 +151,25 @@ function App() {
               </p>
             </div>
 
-            {/* Smaller CTF Cards */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              <ProjectCard 
-                title="LACTF 2025" 
-                description="Writeups and solutions for LACTF 2025 challenges."
-                link="https://github.com/olexamatej/lactf2025"
-              />
-              <ProjectCard 
-                title="pwnable.kr" 
-                description="Solutions for pwnable.kr wargame challenges."
-                link="https://github.com/olexamatej/pwnable.kr"
-              />
+            {/* CTF Writeups Card */}
+            <div className="grid gap-4">
+              <a 
+                href="/writeups.html"
+                className="block p-4 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-emerald-500/50 transition-colors group"
+              >
+                <div className="flex items-start justify-between">
+                  <div>
+                    <h3 className="text-lg font-medium text-slate-200 mb-2 group-hover:text-emerald-400 transition-colors">CTF Challenge Writeups</h3>
+                    <p className="text-slate-400 text-sm mb-3">
+                      Collection of writeups from picoCTF, pwnable.kr, webhacking.kr, LACTF 2025, and more.
+                    </p>
+                    <div className="text-emerald-400 text-sm font-medium flex items-center gap-2">
+                      <span>Browse all writeups</span>
+                      <ExternalLink className="w-4 h-4" />
+                    </div>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </section>

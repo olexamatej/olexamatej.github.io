@@ -4,16 +4,18 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "quarto render blogs/ && vite build",
-    "build:blogs": "quarto render blogs/",
-    "build:site": "vite build",
-    "preview": "vite preview"
+    "dev": "npm run copy-writeups && vite",
+    "build": "npm run copy-writeups && vite build",
+    "preview": "vite preview",
+    "fetch-writeups": "python3 scripts/fetch-writeups.py",
+    "copy-writeups": "mkdir -p public/blogs && cp -r blogs/_includes public/blogs/"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "lucide-react": "^0.344.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.64",

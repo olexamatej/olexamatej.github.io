@@ -1,0 +1,61 @@
+{
+  "repositories": [
+    {
+      "name": "picoctf",
+      "owner": "olexamatej",
+      "displayName": "picoCTF",
+      "description": "picoCTF web exploitation challenges - beginner friendly",
+      "difficulty": "beginner",
+      "category": "Web Exploitation",
+      "url": "https://github.com/olexamatej/picoctf",
+      "icon": "🏴"
+    },
+    {
+      "name": "webhacking.kr",
+      "owner": "olexamatej",
+      "displayName": "webhacking.kr",
+      "description": "Web security challenges covering XSS, SQLi, and various web vulnerabilities",
+      "difficulty": "intermediate",
+      "category": "Web Security",
+      "url": "https://github.com/olexamatej/webhacking.kr",
+      "icon": "🕸️"
+    },
+    {
+      "name": "lactf2025",
+      "owner": "olexamatej",
+      "displayName": "LA CTF 2025",
+      "description": "Advanced challenges from LA CTF 2025 (Top 20%)",
+      "difficulty": "advanced",
+      "category": "Mixed",
+      "url": "https://github.com/olexamatej/lactf2025",
+      "icon": "🏆"
+    },
+    {
+      "name": "pwnable.kr",
+      "owner": "olexamatej",
+      "displayName": "pwnable.kr",
+      "description": "Binary exploitation challenges - buffer overflows, heap attacks, and more",
+      "difficulty": "advanced",
+      "category": "Binary Exploitation",
+      "url": "https://github.com/olexamatej/pwnable.kr",
+      "icon": "💥"
+    }
+  ],
+  "difficulties": {
+    "beginner": {
+      "label": "Beginner Friendly",
+      "color": "#10b981",
+      "weight": 1
+    },
+    "intermediate": {
+      "label": "Intermediate",
+      "color": "#f59e0b",
+      "weight": 2
+    },
+    "advanced": {
+      "label": "Advanced",
+      "color": "#ef4444",
+      "weight": 3
+    }
+  }
+}
