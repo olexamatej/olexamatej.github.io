@@ -1,6 +1,6 @@
 ## Analysis
 The website for this challenge is relatively simple, featuring no input fields but three buttons. Upon closer inspection, it becomes clear that the site does not hide any flags within its HTML elements.
-![website](imgs/image.png)
+![website](https://raw.githubusercontent.com/olexamatej/picoctf/master/SOAP/imgs/image.png)
 
 Running **gobuster**, shows us existence of `/data` directory, which we cannot access.  However, this discovery suggests that the site likely uses HTTP requests for functionality.
 
@@ -8,7 +8,7 @@ Clicking 'details' will write us a information on program - after investigating 
 
 Using **Burp Suite** ([https://portswigger.net/burp](https://portswigger.net/burp)), we can analyze the HTTP communication in detail.
 
-![burpsuite](imgs/image-2.png)
+![burpsuite](https://raw.githubusercontent.com/olexamatej/picoctf/master/SOAP/imgs/image-2.png)
 
 We observe that the payload sent contains an ID parameter, and the server's response is based on this ID. If we modify the ID to an invalid value, such as 0, the server returns an error indicating that the specified ID does not exist.
 
@@ -39,4 +39,4 @@ We can change this to fit our previous payload.
 ~~~
 Then just put this into `burpsuite repeater` and send the request.
 
-![burpsuite-attack](imgs/image-1.png)
+![burpsuite-attack](https://raw.githubusercontent.com/olexamatej/picoctf/master/SOAP/imgs/image-1.png)

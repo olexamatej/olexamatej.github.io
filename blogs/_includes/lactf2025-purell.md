@@ -2,13 +2,13 @@
 
 The challenge presents a website with an input field that renders submitted text as HTML. However, a sanitizer is in place that attempts to block certain inputs.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image.png)
 
 Additionally, an admin bot visits user-provided URLs. The bot has a secret token stored in an environment variable, which we need to extract.
 
 This is clearly an XSS challenge where we must craft a payload that forces the bot to send us the flag.
 
-![alt text](imgs/image-1.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-1.png)
 
 To exfiltrate data, we need a webhook or any service that captures HTTP requests.
 
@@ -26,17 +26,17 @@ Since the bot has the token stored in `.env`, the placeholder `purell-token{xss_
 
 Captured request:
 
-![alt text](imgs/image-2.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-2.png)
 
 Submitting the token gives us the first flag segment.
 
-![alt text](imgs/image-3.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-3.png)
 
 ---
 
 ## Level 1: Basic Filtering
 
-![alt text](imgs/image-4.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-4.png)
 
 Sanitization now blocks the word `script` and limits the HTML length to 150 characters.
 
@@ -48,13 +48,13 @@ Sanitization now blocks the word `script` and limits the HTML length to 150 char
 
 Extracted token:
 
-![alt text](imgs/image-5.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-5.png)
 
 ---
 
 ## Level 2: Case-Sensitive Workaround
 
-![alt text](imgs/image-6.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-6.png)
 
 Now, the sanitizer blocks the substring `on`.
 
@@ -68,7 +68,7 @@ Now, the sanitizer blocks the substring `on`.
 
 ## Level 3: Replacing `on`
 
-![alt text](imgs/image-7.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-7.png)
 
 The filter now converts all input to lowercase and removes `on` using `replaceAll("on", "")`.
 
@@ -82,7 +82,7 @@ The filter now converts all input to lowercase and removes `on` using `replaceAl
 
 ## Level 4: Blocking `>`
 
-![alt text](imgs/image-8.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-8.png)
 
 Now, the sanitizer removes `>` characters, preventing us from closing tags normally.
 
@@ -96,7 +96,7 @@ Now, the sanitizer removes `>` characters, preventing us from closing tags norma
 
 ## Level 5: Blocking Spaces
 
-![alt text](imgs/image-9.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-9.png)
 
 Spaces are now disallowed. To bypass this, we use an `<svg>` tag instead of `<img>`, leveraging an `onload` event.
 
@@ -110,7 +110,7 @@ This method is inspired by the [PortSwigger XSS Cheat Sheet](https://portswigger
 
 ## Level 6: Blocking Parentheses
 
-![alt text](imgs/image-10.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/lactf2025/master/purell/imgs/image-10.png)
 
 Now, even parentheses `()` are forbidden.
 

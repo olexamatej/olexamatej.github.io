@@ -1,14 +1,14 @@
 ### Analysis
 
 The initial website is empty except for an input field with a pre-defined value of `admin`.  
-![Initial website view](image.png)
+![Initial website view](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-19/image.png)
 
 After submitting, an alert informs us that we are not an admin.  
 However, entering any value other than `admin` logs us in successfully.  
-![Alert and login behavior](image-2.png)
+![Alert and login behavior](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-19/image-2.png)
 
 Upon logging in, inspecting the cookies reveals a saved `userid`.  
-![Cookies showing `userid`](image-1.png)
+![Cookies showing `userid`](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-19/image-1.png)
 
 For example:  
 - Logging in as `1` results in the following `userid` value:  

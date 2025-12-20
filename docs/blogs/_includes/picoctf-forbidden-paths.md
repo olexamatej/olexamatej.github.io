@@ -4,7 +4,7 @@ We know that the website files live in /usr/share/nginx/html/ and the flag is at
 `
 And website has just a 1 input field for text.
 
-![site](img/image.png)
+![site](https://raw.githubusercontent.com/olexamatej/picoctf/master/Forbidden_paths/img/image.png)
 
 ## Exploit
 Since we cannot use absolute path, lets use relative one

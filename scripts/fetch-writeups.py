@@ -170,6 +170,26 @@ def main():
                 if raw_content:
                     # Clean up the content (remove any problematic formatting)
                     cleaned_content = raw_content.replace('```', '~~~')  # Avoid nested code blocks
+                    
+                    # Fix image paths - convert relative paths to absolute GitHub URLs
+                    challenge_dir = os.path.dirname(challenge['path'])
+                    # Use master branch (older repos) or main branch (newer repos)
+                    branch = 'master'  # Most repos use master
+                    base_url = f"https://raw.githubusercontent.com/{repo['owner']}/{repo['name']}/{branch}/{challenge_dir}"
+                    
+                    # Replace relative image paths with absolute GitHub URLs
+                    import re
+                    def replace_image_path(match):
+                        alt_text = match.group(1)
+                        img_path = match.group(2)
+                        # If it's already an absolute URL, leave it
+                        if img_path.startswith('http://') or img_path.startswith('https://'):
+                            return match.group(0)
+                        # Convert relative path to absolute GitHub URL
+                        return f'![{alt_text}]({base_url}/{img_path})'
+                    
+                    cleaned_content = re.sub(r'!\[(.*?)\]\((.*?)\)', replace_image_path, cleaned_content)
+                    
                     include_path.write_text(cleaned_content)
                     print('✓')
                 else:

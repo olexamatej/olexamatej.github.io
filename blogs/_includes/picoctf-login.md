@@ -1,5 +1,5 @@
 Classic login site, using invalid credentials gives us alert.  
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/picoctf/master/login/imgs/image.png)
 
 After inspecting the site and checking `index.js`, we can see this code:
 

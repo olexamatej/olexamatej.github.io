@@ -1,0 +1,30 @@
+---
+title: "Random"
+description: "Writeup from pwnable.kr"
+author: "Matej Olexa"
+date: "2025-12-20"
+categories: [Binary Exploitation, Advanced]
+difficulty: "advanced"
+repo: "pwnable.kr"
+challenge-url: "https://github.com/olexamatej/pwnable.kr/tree/main/random"
+image: "https://opengraph.githubassets.com/1/olexamatej/pwnable.kr"
+---
+
+::: {.callout-note}
+## Challenge Info
+**Repository:** [pwnable.kr](https://github.com/olexamatej/pwnable.kr) 💥  
+**Difficulty:** <span style="color: #ef4444; font-weight: bold;">Advanced</span>  
+**Category:** Binary Exploitation  
+**View on GitHub:** [Challenge Files](https://github.com/olexamatej/pwnable.kr/tree/main/random)
+:::
+
+## Solution
+
+{{< include ../../_includes/pwnable-kr-random.md >}}
+
+::: {.callout-tip collapse="true"}
+## View Full Repository
+Check out more challenges from this repository: [pwnable.kr](https://github.com/olexamatej/pwnable.kr)
+
+Binary exploitation challenges - buffer overflows, heap attacks, and more
+:::

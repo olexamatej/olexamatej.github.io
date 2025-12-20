@@ -2,7 +2,7 @@
 ## Analysis
 The initial site is just plain html with a link to source code.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-08/imgs/image.png)
 
 We can inspect this source code closer.
 
@@ -88,7 +88,7 @@ if(!$ck){
 
 To change the `HTTP_USER_AGENT` data used in the database, we can use Burp Suite. Start intercepting, refresh the site, and capture the request.
 
-![alt text](imgs/image-2.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-08/imgs/image-2.png)
 
 The SQL query used is this:
 ~~~SQL
@@ -115,5 +115,5 @@ User-Agent: admin
 
 This way, the code will look for data where User-Agent equals admin, and that data will have an id with the value admin.
 
-![alt text](imgs/image-1.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-08/imgs/image-1.png)
 

@@ -1,10 +1,10 @@
 The page we need to exploit is a static site featuring photos of Irish people.  
 
-![alt text](imgs/image1.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/picoctf/master/Irish-Name-Repo_3/imgs/image1.png)
 
 In the top-left corner, there is a menu with an option for **Admin Login**.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/picoctf/master/Irish-Name-Repo_3/imgs/image.png)
 
 The login form appears to be vulnerable to **SQL injection**.
 

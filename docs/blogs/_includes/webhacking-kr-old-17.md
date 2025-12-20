@@ -2,7 +2,7 @@
 
 The initial website is a classic html with 1 input field.
 
-![alt text](image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-17/image.png)
 
 If we try to write something and click check, we will get a `Wrong answer` alert. 
 

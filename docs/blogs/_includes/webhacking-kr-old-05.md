@@ -1,14 +1,14 @@
 Initial site is made out of 2 humble buttons.
 
-![alt text](imgs/image-1.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-05/imgs/image-1.png)
 
 Clicking join gives us `Access_Denied` alert.
 
-![alt text](imgs/image-2.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-05/imgs/image-2.png)
 
 If we click on `Login`, we will be redirected to another site with login formular. Any inputed data will give us `Wrong password` error.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-05/imgs/image.png)
 
 After inspecting the URL, we can see that we were redirected from initial 
 
@@ -36,7 +36,7 @@ Now we can click on `join.php` and it will move us to
 https://webhacking.kr/challenge/web-05/mem/login.php
 ~~~
 
-![alt text](imgs/image-3.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-05/imgs/image-3.png)
 
 This is an empty site with alert, but now we can inspect the source code.
 
@@ -132,7 +132,7 @@ if (eval(d + o + c + u + m + e + n + t + li + 'U' + 'R' + 'L').indexOf(m + o + d
 
 First `if` statement checks if there is a `document.cookie` named `oldzombie`, which we can easily add.
 
-![alt text](imgs/image-4.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-05/imgs/image-4.png)
 
 Second `if` statement looks for `mode=1` in `document.url`, which we can also easily add.
 ~~~
@@ -141,7 +141,7 @@ https://webhacking.kr/challenge/web-05/mem/join.php?mode=1
 
 Now we are allowed to create a account ! 
 
-![alt text](imgs/image-5.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-05/imgs/image-5.png)
 
 But after trying to login with these credentials, we will get warning that we need to be logged in as a `admin`.
 Creating a account with username `admin` is not allowed, because there already exists a account named `admin`. 

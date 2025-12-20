@@ -2,7 +2,7 @@
 ### **Challenge Overview**  
 The challenge presents a website with **two eyes** that guide us to different places where tokens are hidden. Our goal is to **find all tokens** by searching various locations in a web application.  
 
-![eyes](imgs/image.png)  
+![eyes](https://raw.githubusercontent.com/olexamatej/lactf2025/master/ispy/imgs/image.png)  
 
 ---
 ### **Finding the Tokens**  
@@ -30,7 +30,7 @@ Checking the **browser cookies** (`F12 → Application → Storage → Cookies`)
 
 #### ** Token in Stylesheets**  
 Inspecting the **CSS files** (`F12 → Sources`), we find a token embedded in a stylesheet.  
-![CSS Token](imgs/image-1.png)  
+![CSS Token](https://raw.githubusercontent.com/olexamatej/lactf2025/master/ispy/imgs/image-1.png)  
 
 ---
 
@@ -41,13 +41,13 @@ By inspecting the **HTTP response headers**, another token is revealed. This can
   ~~~bash
   curl -I https://i-spy.chall.lac.tf/
   ~~~
-  ![Header Token](imgs/image-3.png)  
+  ![Header Token](https://raw.githubusercontent.com/olexamatej/lactf2025/master/ispy/imgs/image-3.png)  
 
 ---
 
 #### **Token in `robots.txt`**  
 
-![Robots Token](imgs/image-4.png)  
+![Robots Token](https://raw.githubusercontent.com/olexamatej/lactf2025/master/ispy/imgs/image-4.png)  
 
 
 The website's `robots.txt` file contains a **hidden file path**.  
@@ -68,7 +68,7 @@ Fetching `https://i-spy.chall.lac.tf/a-magical-token.txt` reveals:
 #### **Token in `sitemap.xml`**  
 A `sitemap.xml` file tells search engines which pages to index.  
 Visiting `https://i-spy.chall.lac.tf/sitemap.xml`:  
-![Sitemap Token](imgs/image-5.png)  
+![Sitemap Token](https://raw.githubusercontent.com/olexamatej/lactf2025/master/ispy/imgs/image-5.png)  
 
 ---
 

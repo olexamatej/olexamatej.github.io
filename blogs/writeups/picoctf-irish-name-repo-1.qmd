@@ -1,0 +1,30 @@
+---
+title: "Irish Name Repo 1"
+description: "Writeup from picoCTF"
+author: "Matej Olexa"
+date: "2025-12-20"
+categories: [Web Exploitation, Beginner Friendly]
+difficulty: "beginner"
+repo: "picoctf"
+challenge-url: "https://github.com/olexamatej/picoctf/tree/main/Irish-Name-Repo_1"
+image: "https://opengraph.githubassets.com/1/olexamatej/picoctf"
+---
+
+::: {.callout-note}
+## Challenge Info
+**Repository:** [picoCTF](https://github.com/olexamatej/picoctf) 🏴  
+**Difficulty:** <span style="color: #10b981; font-weight: bold;">Beginner Friendly</span>  
+**Category:** Web Exploitation  
+**View on GitHub:** [Challenge Files](https://github.com/olexamatej/picoctf/tree/main/Irish-Name-Repo_1)
+:::
+
+## Solution
+
+{{< include ../../_includes/picoctf-irish-name-repo-1.md >}}
+
+::: {.callout-tip collapse="true"}
+## View Full Repository
+Check out more challenges from this repository: [picoCTF](https://github.com/olexamatej/picoctf)
+
+picoCTF web exploitation challenges - beginner friendly
+:::

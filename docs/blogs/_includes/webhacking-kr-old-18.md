@@ -1,7 +1,7 @@
 ## Analysis
 The initial website is just a plain html with a input field and a hint, that this challenge will be focused onto SQL injection.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-18/imgs/image.png)
 
 There is also a link to the source code.
 ~~~PHP

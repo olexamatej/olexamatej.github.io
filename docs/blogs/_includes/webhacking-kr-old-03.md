@@ -1,19 +1,19 @@
 The initial site wants us to solve a nonogram.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-03/imgs/image.png)
 
 This is the nonogram solution.  
 
-![alt text](imgs/image-1.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-03/imgs/image-1.png)
 
 After clicking `solved`, it gives us a site with input field, in which we can set the name of our log, this then redirects us to a site with all our logs.  
 
-![alt text](imgs/image-3.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-03/imgs/image-3.png)
 
 
 One thing worth noting is that there is also a "value", which is boolean value we did not explicitly set.
 
-![alt text](imgs/image-2.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-03/imgs/image-2.png)
 
 If we inspect source code of the site with input field, we can find this.
 

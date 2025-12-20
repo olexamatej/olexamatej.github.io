@@ -1,0 +1,30 @@
+---
+title: "Old 07"
+description: "Writeup from webhacking.kr"
+author: "Matej Olexa"
+date: "2025-12-20"
+categories: [Web Security, Intermediate]
+difficulty: "intermediate"
+repo: "webhacking.kr"
+challenge-url: "https://github.com/olexamatej/webhacking.kr/tree/main/old-07"
+image: "https://opengraph.githubassets.com/1/olexamatej/webhacking.kr"
+---
+
+::: {.callout-note}
+## Challenge Info
+**Repository:** [webhacking.kr](https://github.com/olexamatej/webhacking.kr) 🕸️  
+**Difficulty:** <span style="color: #f59e0b; font-weight: bold;">Intermediate</span>  
+**Category:** Web Security  
+**View on GitHub:** [Challenge Files](https://github.com/olexamatej/webhacking.kr/tree/main/old-07)
+:::
+
+## Solution
+
+{{< include ../../_includes/webhacking-kr-old-07.md >}}
+
+::: {.callout-tip collapse="true"}
+## View Full Repository
+Check out more challenges from this repository: [webhacking.kr](https://github.com/olexamatej/webhacking.kr)
+
+Web security challenges covering XSS, SQLi, and various web vulnerabilities
+:::

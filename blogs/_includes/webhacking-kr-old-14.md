@@ -1,6 +1,6 @@
 Website has only one input field.
 
-![alt text](image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-14/image.png)
 
 Inspection of source code shows us this:
 ~~~Javascript

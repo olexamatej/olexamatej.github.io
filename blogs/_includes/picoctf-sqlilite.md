@@ -1,10 +1,10 @@
 Simple page that wants us to try SQL Injection.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/picoctf/master/SQLiLite/imgs/image.png)
 
 If we press `Login`, it redirects us to this.
 
-![alt text](imgs/image1.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/picoctf/master/SQLiLite/imgs/image1.png)
 
 This gives us information on SQL query that is used.
 

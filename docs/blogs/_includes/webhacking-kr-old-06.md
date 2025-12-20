@@ -2,7 +2,7 @@
 
 The initial website gives us information on our login credentials aswell as a link to the source code.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-06/imgs/image.png)
 
 This is the source-code part that interests us. Basically, the credentials are encoded 20 times using base64 and then numbers are replaced by some characters.
 

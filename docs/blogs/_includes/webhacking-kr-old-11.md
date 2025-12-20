@@ -1,7 +1,7 @@
 ### Analysis
 
 Base webpage greets us with a text says "Wrong".
-![alt text](image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-11/image.png)
 
 Apart from that text, it also links us to the source code.
 

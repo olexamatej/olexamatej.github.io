@@ -1,7 +1,7 @@
 
 The whole website is just 2 file inputs. In challenge description it says, that it will check using if those 2 files are .pdf and have the same MD5 hash and let us in if they do.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/picoctf/master/It_is_my_Birthday/imgs/image.png)
 
 
 After little bit of googling i have found this beautiful github repo - `https://github.com/corkami/collisions/blob/master/examples/free/`

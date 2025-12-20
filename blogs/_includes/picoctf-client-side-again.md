@@ -1,6 +1,6 @@
 The initial website contains a single form that verifies whether the entered credentials are correct.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/picoctf/master/Client-side-again/imgs/image.png)
 
 Upon inspecting the source code, we find a JavaScript section:
 

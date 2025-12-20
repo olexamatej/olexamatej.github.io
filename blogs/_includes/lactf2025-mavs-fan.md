@@ -2,10 +2,10 @@
 This challenge consists of two pages:  
 
 1. A file upload page that allows us to upload **any file**.  
-   ![Upload Page](imgs/image-2.png)  
+   ![Upload Page](https://raw.githubusercontent.com/olexamatej/lactf2025/master/mavs-fan/imgs/image-2.png)  
 
 2. An **admin bot** that visits the URLs we upload.  
-   ![Admin Bot](imgs/image-3.png)  
+   ![Admin Bot](https://raw.githubusercontent.com/olexamatej/lactf2025/master/mavs-fan/imgs/image-3.png)  
 
 ### Finding the Vulnerability  
 After testing, I confirmed that if we upload **HTML**, it gets rendered in the browser. This means we can include JavaScript, allowing for **XSS (Cross-Site Scripting)**.  
@@ -16,7 +16,7 @@ To test this, I uploaded a simple script that changes the document title:
   document.title = "XSS executed";
 </script>
 ~~~
-![XSS Test](imgs/image-1.png)  
+![XSS Test](https://raw.githubusercontent.com/olexamatej/lactf2025/master/mavs-fan/imgs/image-1.png)  
 
 Since we have access to the **admin panel's source code**, we know where the flag is stored.  
 
@@ -37,5 +37,5 @@ We can upload a malicious HTML file with this payload:
 
 ### Getting the Flag  
 Once the admin bot visits our uploaded file, our webhook receives the flag:  
-![Webhook Capture](imgs/image.png)  
+![Webhook Capture](https://raw.githubusercontent.com/olexamatej/lactf2025/master/mavs-fan/imgs/image.png)  
 

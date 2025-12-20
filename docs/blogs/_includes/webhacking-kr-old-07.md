@@ -2,11 +2,11 @@
 
 This simple initial site contains only button for `auth` and link to source code. 
 
-![alt text](imgs/image.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-07/imgs/image.png)
 
 Clicking `auth` gives us a `Access_Denied` alert.
 
-![alt text](imgs/image-1.png)
+![alt text](https://raw.githubusercontent.com/olexamatej/webhacking.kr/master/old-07/imgs/image-1.png)
 
 This is the source code linked.
 
