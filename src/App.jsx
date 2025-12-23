@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Terminal, Cpu, Shield, ExternalLink, FileText, Trophy } from 'lucide-react';
+import { Github, Linkedin, Mail, Terminal, Cpu, Shield, ExternalLink, FileText, Trophy, Code } from 'lucide-react';
 
 function NavLink({ href, children }) {
   return (
@@ -21,6 +21,7 @@ function App() {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/index-blogs.html">Blog</NavLink>
           <NavLink href="/writeups.html">CTF Writeups</NavLink>
+          <NavLink href="/index-projects.html">Projects</NavLink>
         </nav>
         
         {/* Header */}
@@ -29,7 +30,7 @@ function App() {
           <div className="flex flex-wrap gap-4 text-slate-400 mb-8 font-mono text-sm">
             <span className="flex items-center gap-2">
               <Shield className="w-4 h-4 text-emerald-400" />
-              Security@FIT
+              Security Researcher @ Security@FIT
             </span>
             <span className="flex items-center gap-2">
               <Terminal className="w-4 h-4 text-emerald-400" />
@@ -37,7 +38,7 @@ function App() {
             </span>
             <span className="flex items-center gap-2">
               <Cpu className="w-4 h-4 text-emerald-400" />
-              Low-level Security
+              Ex-Security Developer @ Guardians.cz
             </span>
           </div>
           <p className="text-slate-400 leading-relaxed max-w-xl">
@@ -52,20 +53,25 @@ function App() {
             <SocialLink href="https://www.linkedin.com/in/matej-olexa" icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" />
             <SocialLink href="mailto:olexa.matej@gmail.com" icon={<Mail className="w-5 h-5" />} label="Email" />
             <SocialLink href="/writeups.html" icon={<Terminal className="w-5 h-5" />} label="CTF Writeups" />
+            <SocialLink href="/index-projects.html" icon={<Code className="w-5 h-5" />} label="Projects" />
           </div>
         </header>
 
-        {/* Experience */}
-        <section className="mb-16">
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> Experience
-          </h2>
+        {/* Professional Experience */}
+        <section className="mb-16 p-6 rounded-lg border border-emerald-500/30 bg-emerald-500/5">
+          <div className="flex items-center gap-2 mb-6">
+            <Shield className="w-5 h-5 text-emerald-400" />
+            <h2 className="text-2xl font-bold text-white">
+              Professional Experience
+            </h2>
+          </div>
           <div className="space-y-8">
             <ExperienceItem 
               title="LLM Security Researcher" 
               company="Security@FIT (RedHat/IBM Sponsored)" 
               period="Sept 2025 - Present"
               description="Developing novel detection methods for fact-editing techniques in large language models under PhD supervision. Research focuses on model integrity, adversarial robustness, and identifying knowledge manipulation patterns."
+              current={true}
             />
             <ExperienceItem 
               title="Security & Software Developer" 
@@ -79,18 +85,28 @@ function App() {
               period="Sept 2023 - Aug 2025"
               description={
                 <>
-                  Designed neural network architectures (MLPs/CNNs) for real-time BLE connection detection (96% F1-score). Co-engineered multi-sniffer monitoring probes using ESP32. Awarded at <span className="text-slate-300">EXCEL@FIT 2025</span> and presented at <span className="text-slate-300">MKB 2025</span>.
+                  Designed neural network architectures (MLPs/CNNs) for real-time BLE connection detection (96% F1-score). Co-engineered multi-sniffer monitoring probes using ESP32. Awarded at <span className="text-slate-200 font-medium">EXCEL@FIT 2025</span> and presented at <span className="text-slate-200 font-medium">MKB 2025</span>.
                 </>
               }
+              award={true}
             />
           </div>
         </section>
 
         {/* Projects */}
         <section className="mb-16">
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> Projects
-          </h2>
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-semibold text-white flex items-center gap-2">
+              <span className="text-emerald-400">#</span> Projects
+            </h2>
+            <a
+              href="/index-projects.html"
+              className="text-sm text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-1"
+            >
+              View All
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </div>
           <div className="grid gap-4">
             <ProjectCard 
               title="2D Mobile Robot Simulator" 
@@ -229,14 +245,26 @@ function SocialLink({ href, icon, label }) {
   );
 }
 
-function ExperienceItem({ title, company, period, description }) {
+function ExperienceItem({ title, company, period, description, current, award }) {
   return (
     <div className="group">
-      <div className="flex justify-between items-baseline mb-1">
-        <h3 className="font-medium text-slate-200 group-hover:text-emerald-400 transition-colors">{title}</h3>
-        <span className="text-sm text-slate-500 font-mono">{period}</span>
+      <div className="flex justify-between items-start mb-2">
+        <div className="flex items-center gap-2">
+          <h3 className="text-base font-semibold text-slate-200 group-hover:text-emerald-400 transition-colors">
+            {title}
+          </h3>
+          {current && (
+            <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+              Current
+            </span>
+          )}
+          {award && (
+            <span className="text-yellow-400 text-sm">🏆</span>
+          )}
+        </div>
+        <span className="text-sm text-slate-500 font-mono whitespace-nowrap ml-4">{period}</span>
       </div>
-      <div className="text-emerald-500/80 text-sm mb-2">{company}</div>
+      <div className="text-emerald-500/80 text-sm font-medium mb-2">{company}</div>
       <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
     </div>
   );
@@ -244,21 +272,27 @@ function ExperienceItem({ title, company, period, description }) {
 
 function ProjectCard({ title, description, link, tech }) {
   return (
-    <a 
-      href={link}
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="block p-4 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-emerald-500/50 hover:bg-slate-900 transition-all group"
-    >
+    <div className="p-4 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-emerald-500/50 transition-all group">
       <div className="flex justify-between items-start mb-2">
         <div>
-          <h3 className="font-medium text-slate-200 group-hover:text-emerald-400 transition-colors">{title}</h3>
+          <h3 className="font-medium text-slate-200">{title}</h3>
           {tech && <span className="text-xs font-mono text-emerald-500/70">{tech}</span>}
         </div>
-        <ExternalLink className="w-4 h-4 text-slate-600 group-hover:text-emerald-400" />
       </div>
-      <p className="text-slate-400 text-sm mt-1">{description}</p>
-    </a>
+      <p className="text-slate-400 text-sm mt-1 mb-3">{description}</p>
+      <div className="flex gap-3 text-sm">
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 transition-colors"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Github className="w-3.5 h-3.5" />
+          GitHub
+        </a>
+      </div>
+    </div>
   );
 }
 

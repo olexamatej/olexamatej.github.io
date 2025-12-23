@@ -209,6 +209,7 @@ export default function WriteupViewer({ selectedRepo, onBack }) {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/index-blogs.html">Blog</NavLink>
           <NavLink href="/writeups.html">CTF Writeups</NavLink>
+          <NavLink href="/index-projects.html">Projects</NavLink>
         </nav>
 
         {/* Back button */}

@@ -12,6 +12,7 @@ export default defineConfig({
         main: 'index.html',
         writeups: 'writeups.html',
         blogs: 'index-blogs.html',
+        projects: 'index-projects.html',
       }
     }
   },

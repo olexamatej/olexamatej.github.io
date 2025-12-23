@@ -66,6 +66,7 @@ export default function Blogs() {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/index-blogs.html">Blog</NavLink>
           <NavLink href="/writeups.html">CTF Writeups</NavLink>
+          <NavLink href="/index-projects.html">Projects</NavLink>
         </nav>
 
         {/* Content */}

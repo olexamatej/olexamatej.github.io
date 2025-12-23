@@ -1,0 +1,167 @@
+{
+  "projects": [
+    {
+      "id": "ble-monitoring-thesis",
+      "name": "bachelor-thesis",
+      "displayName": "BLE Monitoring System",
+      "description": "Co-engineered monitoring probe for Bluetooth Low Energy using ESP32. Created parallel monitoring system with three microcontrollers and developed neural network detection methods (MLP and 1D CNN) for real-time connection detection. Includes web application GUI for connection visualization.",
+      "technologies": ["ESP32", "Machine Learning", "Neural Networks", "IoT Security", "Python", "C"],
+      "categories": ["Embedded Systems", "Security", "Machine Learning"],
+      "url": "https://www.vut.cz/en/students/final-thesis/detail/164339",
+      "icon": "📡",
+      "isThesis": true
+    },
+    {
+      "id": "imap-client",
+      "name": "isa-imap-client",
+      "displayName": "IMAP Client with TLS",
+      "description": "IMAP client implementing RFC3501 protocol for downloading emails with SSL/TLS encryption, certificate verification, and selective message fetching.",
+      "technologies": ["C++", "Networking", "Security"],
+      "categories": ["Networking", "Security"],
+      "url": "https://github.com/olexamatej/isa-imap-client",
+      "icon": "📧"
+    },
+    {
+      "id": "robot-simulation",
+      "name": "icp",
+      "displayName": "2D Robot Simulation",
+      "description": "Interactive mobile robot simulator with autonomous and remote-controlled navigation. Drag-and-drop map creation, obstacle avoidance, and customizable robot parameters.",
+      "technologies": ["C++", "Qt5"],
+      "categories": ["Simulation", "Systems Programming"],
+      "url": "https://github.com/olexamatej/robot-simulation",
+      "icon": "🤖"
+    },
+    {
+      "id": "galactic-exchange",
+      "name": "second-foundation",
+      "displayName": "Galactic Exchange",
+      "description": "High-performance trading exchange system built in 24 hours. Secured 2nd place in Second Foundation hackathon with CTF-like format. Focused on throughput optimization and state persistence.",
+      "technologies": ["Go", "High Performance"],
+      "categories": ["Systems Programming", "Competition"],
+      "url": "https://github.com/olexamatej/second-foundation",
+      "icon": "🏆"
+    },
+    {
+      "id": "cancer-simulation",
+      "name": "CAncer-simulation",
+      "displayName": "Cancer Growth Simulation",
+      "description": "Cellular automaton model simulating tumor growth dynamics. Implements the Valentim et al. model, visualizing cancer cell proliferation over time.",
+      "technologies": ["C++", "Python"],
+      "categories": ["Simulation", "Systems Programming"],
+      "url": "https://github.com/olexamatej/CAncer-simulation",
+      "icon": "🦠"
+    },
+    {
+      "id": "art-school-equipment",
+      "name": "iis",
+      "displayName": "Art School Equipment Management",
+      "description": "Equipment borrowing management system for art school studios with complete access control, workflow automation, and MySQL backend.",
+      "technologies": ["TypeScript", "SvelteKit", "MySQL"],
+      "categories": ["Information System", "Web Application"],
+      "url": "https://github.com/olexamatej/iis",
+      "icon": "🎨"
+    },
+    {
+      "id": "blackjack-multiplayer",
+      "name": "ITU",
+      "displayName": "Multiplayer Blackjack",
+      "description": "Real-time multiplayer blackjack with live state synchronization, dynamic player management, and complete game logic implementation.",
+      "technologies": ["TypeScript", "SvelteKit", "Node.js", "WebSocket"],
+      "categories": ["Web Application"],
+      "url": "https://github.com/olexamatej/ITU",
+      "icon": "🃏"
+    },
+    {
+      "id": "esp32-led-controller",
+      "name": "IMP",
+      "displayName": "ESP32 LED Controller",
+      "description": "LED control system with web interface for ESP32. Multiple RGB animation modes, programmable sequences, and mobile-responsive interface with FreeRTOS.",
+      "technologies": ["C", "ESP32", "FreeRTOS"],
+      "categories": ["Embedded Systems", "IoT"],
+      "url": "https://github.com/olexamatej/IMP",
+      "icon": "💡"
+    },
+    {
+      "id": "packet-sniffer",
+      "name": "ipk-packet-sniffer",
+      "displayName": "Network Packet Sniffer",
+      "description": "Packet sniffer using PCAP library supporting TCP, UDP, ARP, ICMP, IGMP, MLD, and NDP protocols with flexible filtering and IPv4/IPv6 support.",
+      "technologies": ["C++", "PCAP"],
+      "categories": ["Networking", "Security"],
+      "url": "https://github.com/olexamatej/ipk-packet-sniffer",
+      "icon": "🔍"
+    },
+    {
+      "id": "ipk-chat-client",
+      "name": "ipk-chat-client",
+      "displayName": "IPK24-CHAT Client",
+      "description": "Chat client with dual TCP/UDP support and multi-threaded architecture with configurable timeouts and retransmission.",
+      "technologies": ["C++"],
+      "categories": ["Networking", "Systems Programming"],
+      "url": "https://github.com/olexamatej/ipk-chat-client",
+      "icon": "💬"
+    },
+    {
+      "id": "bsec-2025",
+      "name": "bsec-2025",
+      "displayName": "Personal Finance Gamification",
+      "description": "Personal financial management web application with gamification features. Built for BSEC hackathon CODE IT! Challenge, focused on creating engaging user experience for financial tracking.",
+      "technologies": ["TypeScript", "Next.js", "tRPC", "Prisma"],
+      "categories": ["Web Application", "Competition"],
+      "url": "https://github.com/TheRamsay/bsec-2025",
+      "icon": "💰"
+    }
+  ],
+  "categories": {
+    "Simulation": {
+      "label": "Simulation",
+      "color": "#8b5cf6",
+      "icon": "🔬"
+    },
+    "Embedded Systems": {
+      "label": "Embedded Systems",
+      "color": "#f59e0b",
+      "icon": "🔌"
+    },
+    "Networking": {
+      "label": "Networking",
+      "color": "#3b82f6",
+      "icon": "🌐"
+    },
+    "Web Application": {
+      "label": "Web Application",
+      "color": "#10b981",
+      "icon": "🌍"
+    },
+    "Information System": {
+      "label": "Information System",
+      "color": "#06b6d4",
+      "icon": "🗄️"
+    },
+    "Security": {
+      "label": "Security",
+      "color": "#ef4444",
+      "icon": "🔒"
+    },
+    "Systems Programming": {
+      "label": "Systems Programming",
+      "color": "#6366f1",
+      "icon": "⚙️"
+    },
+    "Machine Learning": {
+      "label": "Machine Learning",
+      "color": "#ec4899",
+      "icon": "🤖"
+    },
+    "IoT": {
+      "label": "IoT",
+      "color": "#14b8a6",
+      "icon": "📱"
+    },
+    "Competition": {
+      "label": "Competition",
+      "color": "#f97316",
+      "icon": "🏁"
+    }
+  }
+}
