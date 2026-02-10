@@ -5,6 +5,14 @@ function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30">
       <div className="max-w-3xl mx-auto px-6 py-20">
+        {/* Navigation */}
+        <nav className="mb-12 flex gap-6">
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/index-blogs.html">Blog</NavLink>
+          <NavLink href="/writeups.html">CTF Writeups</NavLink>
+          <NavLink href="/index-projects.html">Projects</NavLink>
+        </nav>
+
         {/* Header */}
         <header className="mb-16">
           <h1 className="text-4xl font-bold text-white mb-4 tracking-tight">Matej Olexa</h1>
@@ -76,7 +84,7 @@ function App() {
             <ProjectCard 
               title="BLE Monitoring System" 
               tech="Python / Pytorch / ESP-IDF / C"
-              description="Real-time Bluetooth Low Energy monitoring system using neural networks for connection detection. Multi-sniffer architecture with ESP32 probes achieving 96% F1-score. Master's thesis research project."
+              description="Real-time Bluetooth Low Energy monitoring system using neural networks for connection detection. Multi-sniffer architecture with ESP32 probes achieving 96% F1-score. Bachelor's thesis research project."
               link="https://github.com/olexamatej/monitoring-bluetooth-low-energy"
             />
             <ProjectCard 
@@ -192,6 +200,17 @@ function App() {
         </footer>
       </div>
     </div>
+  );
+}
+
+function NavLink({ href, children }) {
+  return (
+    <a 
+      href={href}
+      className="text-slate-300 hover:text-emerald-400 transition-colors font-semibold"
+    >
+      {children}
+    </a>
   );
 }
 
