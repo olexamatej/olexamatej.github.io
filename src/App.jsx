@@ -137,6 +137,7 @@ function App() {
               description="Dataset used for BLE security research and model training in the monitoring pipeline."
               link="https://github.com/olexamatej/BLE-ARD"
             />
+            <ProjectCard 
               title="2D Mobile Robot Simulator" 
               tech="C++ / Qt"
               description="Physics-based simulator for autonomous mobile robots with collision detection and real-time visualization. Implemented autonomous navigation and remote operation modes."
