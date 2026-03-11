@@ -70,7 +70,20 @@ function App() {
               title="LLM Security Researcher" 
               company="Security@FIT (RedHat/IBM Sponsored)" 
               period="Sept 2025 - Present"
-              description="Developing novel detection methods for fact-editing techniques in large language models under PhD supervision. Research focuses on model integrity, adversarial robustness, and identifying knowledge manipulation patterns."
+              description={
+                <>
+                  Developing novel detection methods for fact-editing techniques in large language models under PhD supervision. Research focuses on model integrity, adversarial robustness, and identifying knowledge manipulation patterns. See{' '}
+                  <a
+                    href="https://github.com/Security-FIT/Latium"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:text-emerald-300 underline"
+                  >
+                    Latium
+                  </a>{' '}
+                  for implementation of the ROME editing method and ongoing research.
+                </>
+              }
               current={true}
             />
             <ExperienceItem 
@@ -85,7 +98,25 @@ function App() {
               period="Sept 2023 - Aug 2025"
               description={
                 <>
-                  Designed neural network architectures (MLPs/CNNs) for real-time BLE connection detection (96% F1-score). Co-engineered multi-sniffer monitoring probes using ESP32. Awarded at <span className="text-slate-200 font-medium">EXCEL@FIT 2025</span> and presented at <span className="text-slate-200 font-medium">MKB 2025</span>.
+                  Designed neural network architectures (MLPs/CNNs) for real-time BLE connection detection (96% F1-score). Co-engineered multi-sniffer monitoring probes using ESP32. Awarded at <span className="text-slate-200 font-medium">EXCEL@FIT 2025</span> and presented at <span className="text-slate-200 font-medium">MKB 2025</span>. Source code and thesis:{' '}
+                  <a
+                    href="https://github.com/olexamatej/monitoring-bluetooth-low-energy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:text-emerald-300 underline"
+                  >
+                    monitoring-bluetooth-low-energy
+                  </a>
+                  . Dataset:{' '}
+                  <a
+                    href="https://github.com/olexamatej/BLE-ARD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:text-emerald-300 underline"
+                  >
+                    BLE-ARD
+                  </a>
+                  .
                 </>
               }
               award={true}
@@ -109,6 +140,30 @@ function App() {
           </div>
           <div className="grid gap-4">
             <ProjectCard 
+              title="Latium: ROME Model Editing Research" 
+              tech="Python / PyTorch / LLM Security"
+              description="Implementation of the ROME model-editing method with ongoing research on LLM integrity and adversarial robustness."
+              link="https://github.com/Security-FIT/Latium"
+            />
+            <ProjectCard 
+              title="BSEC 2026: Multi-Agent Editorial AI" 
+              tech="Multi-Agent AI / Web Workflow"
+              description="Built in a 12-hour sprint: turns a short brief into publish-ready content for YouTube, Instagram, and TikTok, with research and a tool-calling assistant."
+              link="https://github.com/olexamatej/bsec-2026"
+            />
+            <ProjectCard 
+              title="BLE Monitoring System Research" 
+              tech="ESP32 / Python / Neural Networks"
+              description="Complete BLE monitoring system research repository with source code, implementation details, and thesis materials."
+              link="https://github.com/olexamatej/monitoring-bluetooth-low-energy"
+            />
+            <ProjectCard 
+              title="BLE-ARD Dataset" 
+              tech="Dataset / BLE Security / ML"
+              description="Dataset used for BLE security research and model training in the monitoring pipeline."
+              link="https://github.com/olexamatej/BLE-ARD"
+            />
+            <ProjectCard 
               title="2D Mobile Robot Simulator" 
               tech="C++ / Qt"
               description="Physics-based simulator for autonomous mobile robots with collision detection and real-time visualization. Implemented autonomous navigation and remote operation modes."
@@ -119,18 +174,6 @@ function App() {
               tech="Go"
               description="High-performance backend for real-time energy trading (2nd Place at Second Foundation Hackathon). Optimized for low-latency order matching and high concurrency."
               link="https://github.com/olexamatej/second-foundation"
-            />
-            <ProjectCard 
-              title="Multi-Threaded Chat Client" 
-              tech="C++ / TCP / UDP"
-              description="Custom protocol client supporting TCP/UDP. Designed multi-threaded architecture with a custom reliability layer for UDP packet tracking and acknowledgments."
-              link="https://github.com/olexamatej/ipk-chat-client"
-            />
-            <ProjectCard 
-              title="BSEC2025 Hackathon Winner" 
-              tech="Next.js / Tailwind"
-              description="Winning gamified personal finance management application. Combined financial tracking with game mechanics to encourage healthy money habits."
-              link="https://github.com/olexamatej/bsec-2025"
             />
           </div>
         </section>

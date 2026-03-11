@@ -1,15 +1,44 @@
 {
   "projects": [
     {
+      "id": "latium-rome-editing",
+      "name": "Latium",
+      "displayName": "Latium (ROME Model Editing)",
+      "description": "Implementation of the ROME model-editing method with active research on LLM integrity and adversarial robustness.",
+      "technologies": ["Python", "PyTorch", "LLM", "Model Editing", "ROME"],
+      "categories": ["Machine Learning", "Security"],
+      "url": "https://github.com/Security-FIT/Latium",
+      "icon": "🧠"
+    },
+    {
       "id": "ble-monitoring-thesis",
-      "name": "bachelor-thesis",
+      "name": "monitoring-bluetooth-low-energy",
       "displayName": "BLE Monitoring System",
-      "description": "Co-engineered monitoring probe for Bluetooth Low Energy using ESP32. Created parallel monitoring system with three microcontrollers and developed neural network detection methods (MLP and 1D CNN) for real-time connection detection. Includes web application GUI for connection visualization.",
+      "description": "Complete BLE monitoring research implementation with source code, thesis materials, and neural network detection methods (MLP and 1D CNN) for real-time BLE connection detection.",
       "technologies": ["ESP32", "Machine Learning", "Neural Networks", "IoT Security", "Python", "C"],
       "categories": ["Embedded Systems", "Security", "Machine Learning"],
-      "url": "https://www.vut.cz/en/students/final-thesis/detail/164339",
-      "icon": "📡",
-      "isThesis": true
+      "url": "https://github.com/olexamatej/monitoring-bluetooth-low-energy",
+      "icon": "📡"
+    },
+    {
+      "id": "ble-ard-dataset",
+      "name": "BLE-ARD",
+      "displayName": "BLE-ARD Dataset",
+      "description": "Dataset for BLE security research and machine learning evaluation used in BLE monitoring research workflows.",
+      "technologies": ["Dataset", "Machine Learning", "BLE", "Security Research"],
+      "categories": ["Machine Learning", "Security"],
+      "url": "https://github.com/olexamatej/BLE-ARD",
+      "icon": "🧪"
+    },
+    {
+      "id": "bsec-2026",
+      "name": "bsec-2026",
+      "displayName": "BSEC 2026 Editorial AI",
+      "description": "12-hour sprint multi-agent editorial workflow that turns a short brief into publish-ready outputs for YouTube, Instagram, and TikTok, with research enrichment and a tool-calling assistant.",
+      "technologies": ["Multi-Agent AI", "Content Generation", "Web Application"],
+      "categories": ["Web Application", "Competition", "Machine Learning"],
+      "url": "https://github.com/olexamatej/bsec-2026",
+      "icon": "📰"
     },
     {
       "id": "imap-client",
