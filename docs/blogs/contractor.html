@@ -9,6 +9,9 @@
 <meta name="dcterms.date" content="2025-05-01">
 <meta name="description" content="Detailed analysis of the HTB CyberApocalypse 2025 ‘Contractor’ pwn challenge, demonstrating a technique to bypass stack canaries by corrupting a stack pointer during an overflow.">
 
+<meta name="theme-color" content="#f1efe8">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
 <title>HTB CyberApocalypse 2025 - Contractor: Exploiting Stack Pointer Corruption to Bypass Canaries – Matej Olexa</title>
 <style>
 code{white-space: pre-wrap;}
@@ -77,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-24861bc286682b62f98690f1edb16a39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-24861bc286682b62f98690f1edb16a39.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -111,11 +114,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-dark">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="light">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="/">
@@ -130,11 +133,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="/"> 
-<span class="menu-text">Home</span></a>
+<span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blogs/index.html"> 
-<span class="menu-text">Blog</span></a>
+    <a class="nav-link" href="../index-projects.html">
+<span class="menu-text">Projects</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="../writeups.html">
+<span class="menu-text">Writing</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -144,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://www.linkedin.com/in/matej-olexa-0b7883222/"> <i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://www.linkedin.com/in/matej-olexa"> <i class="bi bi-linkedin" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -838,8 +845,11 @@ Stripped:   No               (Symbols available, helps analysis)</code></pre>
   </script>
 </div> <!-- /content -->
 
-
-
+<footer class="article-site-footer">
+  <a class="article-footer-brand" href="/"><strong>Matej Olexa</strong></a>
+  <p>Student researcher.</p>
+  <div><a href="../writeups.html">Writing</a><a href="../index-projects.html">Projects</a></div>
+</footer>
 
 <script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

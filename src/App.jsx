@@ -1,318 +1,351 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Terminal, Cpu, Shield, ExternalLink, FileText, Trophy } from 'lucide-react';
+import {
+  ArrowUpRight,
+  FileText,
+  Github,
+  Linkedin,
+  Mail,
+  Twitter,
+} from 'lucide-react';
+import { SiteFooter, SiteHeader } from './SiteChrome';
+
+const socialLinks = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/matej-olexa',
+    icon: Linkedin,
+  },
+  {
+    label: 'Email',
+    href: 'mailto:olexa.matej@gmail.com',
+    icon: Mail,
+  },
+  {
+    label: 'Twitter',
+    href: 'https://x.com/metjuas',
+    icon: Twitter,
+  },
+  {
+    label: 'GitHub',
+    href: 'https://github.com/olexamatej',
+    icon: Github,
+  },
+];
+
+const projects = [
+  {
+    title: 'Latium',
+    description:
+      'Open-source tooling for causal tracing, weight intervention, and layer-level spectral analysis of edited language models.',
+    context: 'LLM security research',
+    tech: ['Python', 'PyTorch', 'LLMs'],
+    href: 'https://github.com/Security-FIT/Latium',
+  },
+  {
+    title: 'BLE Monitoring System',
+    description:
+      'Distributed ESP32 probes and neural networks for passive, real-time BLE connection detection, reaching a 96% F1 score.',
+    context: 'Bachelor\'s thesis · Grade A',
+    tech: ['ESP32', 'PyTorch', 'C'],
+    href: 'https://github.com/olexamatej/monitoring-bluetooth-low-energy',
+  },
+  {
+    title: 'Multi-Agent Content Platform',
+    description:
+      'Four specialized AI agents with web research, location verification, and automated platform-ready content generation.',
+    context: 'BSEC 2026 · 1st place',
+    tech: ['TypeScript', 'Agents', 'Web search'],
+    href: 'https://github.com/olexamatej/bsec-2026',
+  },
+  {
+    title: 'Real-Time Energy Market',
+    description:
+      'A high-throughput Go backend for real-time energy trading, built in a four-person hackathon team.',
+    context: 'Second Foundation · 2nd place',
+    tech: ['Go', 'Concurrency'],
+    href: 'https://github.com/olexamatej/second-foundation',
+  },
+];
+
+const experience = [
+  {
+    period: '09.2025 — now',
+    role: 'LLM Security Researcher',
+    company: 'Security@FIT · Red Hat Research',
+    description:
+      'Detecting ROME and MEMIT knowledge edits in language models. Built Latium; research submitted to ACM CCS.',
+    tags: ['LLM forensics', 'PyTorch', 'Research'],
+  },
+  {
+    period: '04.2025 — 12.2025',
+    role: 'Security & Software Developer',
+    company: 'Guardians.cz',
+    description:
+      'Built and deployed a full-stack NIS2 compliance automation system and consulted on DevSecOps and CI/CD security.',
+    tags: ['NIS2', 'Python', 'SvelteKit'],
+  },
+  {
+    period: '09.2023 — 08.2025',
+    role: 'BLE Security Researcher',
+    company: 'Security@FIT',
+    description:
+      'Built distributed ESP32 monitoring probes and neural BLE connection detectors with a 96% F1 score.',
+    tags: ['BLE', 'Embedded systems', 'Machine learning'],
+  },
+];
+
+const speaking = [
+  { name: 'SantaCrypt', type: 'Security conference' },
+  { name: 'Brno AI Meetup', type: 'AI meetup' },
+  { name: 'DevConf.cz', type: 'Developer conference' },
+];
+
+const hackathons = [
+  { name: 'BSEC 2025', result: 'Winner' },
+  { name: 'BSEC 2026', result: 'Winner' },
+  { name: 'Second Foundation', result: '2nd place' },
+  { name: 'Codex Hackathon · Vienna', result: '9th / 80 teams' },
+];
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200 font-sans selection:bg-emerald-500/30">
-      <div className="max-w-3xl mx-auto px-6 py-20">
-        {/* Navigation */}
-        <nav className="mb-12 flex gap-6">
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/index-blogs.html">Blog</NavLink>
-          <NavLink href="/writeups.html">CTF Writeups</NavLink>
-          <NavLink href="/index-projects.html">Projects</NavLink>
-        </nav>
+    <div className="portfolio">
+      <SiteHeader active="overview" />
 
-        {/* Header */}
-        <header className="mb-16">
-          <h1 className="text-4xl font-bold text-white mb-4 tracking-tight">Matej Olexa</h1>
-          <div className="flex flex-wrap gap-4 text-slate-400 mb-8 font-mono text-sm">
-            <span className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-emerald-400" />
-              Security@FIT
-            </span>
-            <span className="flex items-center gap-2">
-              <Terminal className="w-4 h-4 text-emerald-400" />
-              Master's Student @ BUT
-            </span>
-            <span className="flex items-center gap-2">
-              <Cpu className="w-4 h-4 text-emerald-400" />
-              Low-level Security
-            </span>
-          </div>
-          <p className="text-slate-400 leading-relaxed max-w-xl">
-            Cybersecurity Master's Student at FIT BUT and Researcher with SECURITY@FIT. 
-            My research currently focuses on <strong>LLM model integrity</strong> and adversarial robustness, building upon my previous work in BLE security and embedded systems. 
-            Previously a Security & Software Developer at Guardians.cz, where I architected NIS2 compliance automation tools. 
-            Passionate about malware analysis, reverse engineering, and high-performance systems.
-          </p>
-          
-          <div className="flex gap-4 mt-6">
-            <SocialLink href="https://github.com/olexamatej" icon={<Github className="w-5 h-5" />} label="GitHub" />
-            <SocialLink href="https://www.linkedin.com/in/matej-olexa" icon={<Linkedin className="w-5 h-5" />} label="LinkedIn" />
-            <SocialLink href="mailto:olexa.matej@gmail.com" icon={<Mail className="w-5 h-5" />} label="Email" />
-          </div>
-        </header>
-
-        {/* Experience */}
-        <section className="mb-16">
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> Experience
-          </h2>
-          <div className="space-y-8">
-            <ExperienceItem 
-              title="LLM Security Researcher" 
-              company="Security@FIT (RedHat/IBM Sponsored)" 
-              period="Sept 2025 - Present"
-              description={
-                <>
-                  Developing novel detection methods for fact-editing techniques in large language models under PhD supervision. Research focuses on model integrity, adversarial robustness, and identifying knowledge manipulation patterns. See{' '}
-                  <a
-                    href="https://github.com/Security-FIT/Latium"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-emerald-400 hover:text-emerald-300 underline"
-                  >
-                    Latium
-                  </a>{' '}
-                  for implementation of the ROME editing method and ongoing research.
-                </>
-              }
-              current={true}
-            />
-            <ExperienceItem 
-              title="Security & Software Developer" 
-              company="Guardians.cz" 
-              period="April 2025 – Dec 2025"
-              description="Architected and developed a full-stack NIS2 (nZKB) compliance automation engine (Python/SvelteKit, 13k LOC). Conducted real-world penetration testing and consulted on SSDLC implementation and CI/CD security integration."
-            />
-            <ExperienceItem 
-              title="BLE Security Researcher" 
-              company="Security@FIT" 
-              period="Sept 2023 - Aug 2025"
-              description={
-                <>
-                  Designed neural network architectures (MLPs/CNNs) for real-time BLE connection detection (96% F1-score). Co-engineered multi-sniffer monitoring probes using ESP32. Awarded at <span className="text-slate-200 font-medium">EXCEL@FIT 2025</span> and presented at <span className="text-slate-200 font-medium">MKB 2025</span>. Source code and thesis:{' '}
-                  <a
-                    href="https://github.com/olexamatej/monitoring-bluetooth-low-energy"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-emerald-400 hover:text-emerald-300 underline"
-                  >
-                    monitoring-bluetooth-low-energy
-                  </a>
-                  . Dataset:{' '}
-                  <a
-                    href="https://github.com/olexamatej/BLE-ARD"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-emerald-400 hover:text-emerald-300 underline"
-                  >
-                    BLE-ARD
-                  </a>
-                  .
-                </>
-              }
-            />
-          </div>
-        </section>
-
-        {/* Projects */}
-        <section className="mb-16">
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> Projects
-          </h2>
-          <div className="grid gap-4">
-            <ProjectCard 
-              title="Latium: ROME Model Editing Research" 
-              tech="Python / PyTorch / LLM Security"
-              description="Implementation of the ROME model-editing method with ongoing research on LLM integrity and adversarial robustness."
-              link="https://github.com/Security-FIT/Latium"
-            />
-            <ProjectCard 
-              title="BSEC 2026: Multi-Agent Editorial AI" 
-              tech="Multi-Agent AI / Web Workflow"
-              description="Built in a 12-hour sprint: turns a short brief into publish-ready content for YouTube, Instagram, and TikTok, with research and a tool-calling assistant."
-              link="https://github.com/olexamatej/bsec-2026"
-            />
-            <ProjectCard 
-              title="BLE Monitoring System Research" 
-              tech="ESP32 / Python / Neural Networks"
-              description="Complete BLE monitoring system research repository with source code, implementation details, and thesis materials."
-              link="https://github.com/olexamatej/monitoring-bluetooth-low-energy"
-            />
-            <ProjectCard 
-              title="BLE-ARD Dataset" 
-              tech="Dataset / BLE Security / ML"
-              description="Dataset used for BLE security research and model training in the monitoring pipeline."
-              link="https://github.com/olexamatej/BLE-ARD"
-            />
-            <ProjectCard 
-              title="2D Mobile Robot Simulator" 
-              tech="C++ / Qt"
-              description="Physics-based simulator for autonomous mobile robots with collision detection and real-time visualization. Implemented autonomous navigation and remote operation modes."
-              link="https://github.com/olexamatej/robot-simulation"
-            />
-            <ProjectCard 
-              title="Real-Time Energy Trading Market" 
-              tech="Go"
-              description="High-performance backend for real-time energy trading (2nd Place at Second Foundation Hackathon). Optimized for low-latency order matching and high concurrency."
-              link="https://github.com/olexamatej/second-foundation"
-            />
-          </div>
-        </section>
-
-        {/* CTF & Competitions */}
-        <section className="mb-16">
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> Security Competitions
-          </h2>
-          
-          <div className="space-y-6">
-            {/* CyberHeroes */}
-            <div className="p-4 rounded-lg border border-emerald-500/20 bg-emerald-500/5 relative overflow-hidden">
-               <div className="absolute top-0 right-0 p-3 opacity-10">
-                 <Trophy className="w-16 h-16 text-emerald-400" />
-               </div>
-               <h3 className="text-lg font-medium text-emerald-400 mb-1">CyberHeroes Academy (Blue Team)</h3>
-               <div className="text-emerald-500/80 text-sm mb-3">Binary Confidence, 2025</div>
-               <p className="text-slate-300 text-sm leading-relaxed">
-                 Led SOC analyst role in a 7-person team. <strong>First team in history</strong> to successfully defend against red team attacks, achieving a record-breaking point score during real-time defensive operations.
-               </p>
+      <main>
+        <section className="page-shell hero-section" id="overview">
+          <div className="hero-copy">
+            <div className="availability-pill">
+              <span>Security@FIT</span>
+              <span>Brno, Czechia</span>
             </div>
 
-            {/* CyberApocalypse */}
-            <div className="p-4 rounded-lg border border-slate-800 bg-slate-900/50">
-              <h3 className="text-lg font-medium text-slate-200 mb-2">CyberApocalypse CTF 2025</h3>
-              <div className="flex gap-4 text-sm font-mono text-slate-400 mb-3">
-                <span>Rank: 166th / 8130</span>
-                <span className="text-emerald-500">•</span>
-                <span>Team MVP</span>
-              </div>
-              <p className="text-slate-400 text-sm">
-                Key contributor for binary exploitation challenges. Authored writeups for <a href="/blogs/contractor.html" className="text-emerald-400 hover:underline">Contractor</a> & <a href="/blogs/strategist.html" className="text-emerald-400 hover:underline">Strategist</a>.
+            <h1>
+              Matej Olexa
+              <span>Student researcher.</span>
+            </h1>
+
+            <p className="hero-lede">
+              Master&apos;s student at Brno University of Technology, researching LLM
+              forensics with Security@FIT.
+            </p>
+
+            <p className="hero-interests">
+              <span>Interested in</span>
+              AI interpretability, unusual model behaviour, and cybersecurity.
+            </p>
+
+            <div className="hero-socials" aria-label="Contact and social links">
+              {socialLinks.map(({ label, href, icon: Icon }) => {
+                const external = href.startsWith('http');
+
+                return (
+                  <a
+                    key={label}
+                    className="hero-social-link"
+                    href={href}
+                    target={external ? '_blank' : undefined}
+                    rel={external ? 'noreferrer' : undefined}
+                  >
+                    <Icon size={17} />
+                    <span>{label}</span>
+                    <ArrowUpRight size={14} />
+                  </a>
+                );
+              })}
+            </div>
+
+          </div>
+
+          <CurrentPanel />
+        </section>
+
+        <section className="section page-shell" id="experience">
+          <SectionHeading
+            eyebrow="01 / Experience"
+            title="Experience."
+          />
+
+          <div className="experience-layout">
+            <aside className="experience-aside">
+              <span className="card-kicker">Education</span>
+              <h3>Year 4 of 5 at BUT</h3>
+              <p>
+                MSc in AI &amp; Cybersecurity<br />
+                BSc in Information Technology · 2025
               </p>
-            </div>
+              <a href="https://www.fit.vut.cz/" target="_blank" rel="noreferrer">
+                Faculty of IT <ArrowUpRight size={16} />
+              </a>
+            </aside>
 
-            {/* Smaller CTF Cards */}
-            <div className="grid gap-4 sm:grid-cols-2">
-              <ProjectCard 
-                title="LACTF 2025" 
-                description="Writeups and solutions for LACTF 2025 challenges."
-                link="https://github.com/olexamatej/lactf2025"
-              />
-              <ProjectCard 
-                title="pwnable.kr" 
-                description="Solutions for pwnable.kr wargame challenges."
-                link="https://github.com/olexamatej/pwnable.kr"
-              />
+            <div className="timeline">
+              {experience.map((item) => (
+                <ExperienceItem key={`${item.role}-${item.period}`} {...item} />
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Certifications */}
-        <section className="mb-16">
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> Certifications
-          </h2>
-          <div className="p-4 rounded-lg border border-slate-800 bg-slate-900/50">
-            <div className="flex justify-between items-baseline">
-              <h3 className="font-medium text-slate-200">nZKB Akademia Certificate</h3>
-              <span className="text-sm text-slate-500 font-mono">2025</span>
-            </div>
-            <p className="text-slate-400 text-sm mt-1">Specialized training in new Czech cybersecurity legislation (NIS2).</p>
+        <section className="section section-rule page-shell" id="elsewhere">
+          <SectionHeading
+            eyebrow="02 / Elsewhere"
+            title="Talks and hackathons."
+          />
+
+          <div className="activity-layout">
+            <ActivityList title="Spoke at" items={speaking} valueKey="type" />
+            <ActivityList title="Hackathon results" items={hackathons} valueKey="result" />
+          </div>
+
+          <div className="overview-writing" aria-label="Featured writing">
+            <span>Featured writing</span>
+            <a href="/blogs/contractor.html">
+              <FileText size={15} />
+              <span><strong>Contractor</strong>Stack canary bypass</span>
+              <ArrowUpRight size={14} />
+            </a>
+            <a href="/blogs/strategist.html">
+              <FileText size={15} />
+              <span><strong>Strategist</strong>Tcache poisoning</span>
+              <ArrowUpRight size={14} />
+            </a>
           </div>
         </section>
 
-        {/* Writeups */}
-        <section>
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> Selected Writeups
-          </h2>
-          <div className="space-y-4">
-            <WriteupLink 
-              title="Cyber Apocalypse 2025: Contractor"
-              category="Web Exploitation"
-              link="/blogs/contractor.html"
-            />
-            <WriteupLink 
-              title="Cyber Apocalypse 2025: Strategist"
-              category="Game Hacking / Reverse Engineering"
-              link="/blogs/strategist.html"
-            />
+        <section className="section section-rule page-shell" id="work">
+          <SectionHeading
+            eyebrow="03 / Work"
+            title="Selected work."
+            description="Open-source research and competition projects."
+          />
+
+          <div className="project-grid">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.title} index={index + 1} {...project} />
+            ))}
+          </div>
+
+          <div className="section-links">
+            <a className="inline-link" href="/index-projects.html">
+              All projects <ArrowUpRight size={17} />
+            </a>
+            <a className="inline-link" href="/writeups.html">
+              CTF writeups <ArrowUpRight size={17} />
+            </a>
           </div>
         </section>
+      </main>
 
-        <footer className="mt-20 pt-8 border-t border-slate-800 text-center text-slate-600 text-sm">
-          <p>© {new Date().getFullYear()} Matej Olexa. Built with React & Tailwind.</p>
-        </footer>
-      </div>
+      <SiteFooter />
     </div>
   );
 }
 
-function NavLink({ href, children }) {
+function CurrentPanel() {
   return (
-    <a 
-      href={href}
-      className="text-slate-300 hover:text-emerald-400 transition-colors font-semibold"
-    >
-      {children}
-    </a>
-  );
-}
-
-function SocialLink({ href, icon, label }) {
-  return (
-    <a 
-      href={href} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="p-2 text-slate-400 hover:text-emerald-400 hover:bg-emerald-400/10 rounded-md transition-colors"
-      aria-label={label}
-    >
-      {icon}
-    </a>
-  );
-}
-
-function ExperienceItem({ title, company, period, description }) {
-  return (
-    <div className="group">
-      <div className="flex justify-between items-baseline mb-1">
-        <h3 className="font-medium text-slate-200 group-hover:text-emerald-400 transition-colors">{title}</h3>
-        <span className="text-sm text-slate-500 font-mono">{period}</span>
+    <aside className="current-panel" aria-label="Current work">
+      <div className="current-panel-topline">
+        <span className="card-kicker">Current work</span>
+        <span>2025 — now</span>
       </div>
-      <div className="text-emerald-500/80 text-sm mb-2">{company}</div>
-      <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
-    </div>
-  );
-}
 
-function ProjectCard({ title, description, link, tech }) {
-  return (
-    <a 
-      href={link}
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="block p-4 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-emerald-500/50 hover:bg-slate-900 transition-all group"
-    >
-      <div className="flex justify-between items-start mb-2">
+      <div className="current-panel-main">
+        <span className="current-panel-id">Research / 01</span>
+        <h2>LLM forensics</h2>
+        <p>
+          Detecting ROME and MEMIT knowledge edits in open-weight language models.
+        </p>
+      </div>
+
+      <dl className="current-facts">
         <div>
-          <h3 className="font-medium text-slate-200 group-hover:text-emerald-400 transition-colors">{title}</h3>
-          {tech && <span className="text-xs font-mono text-emerald-500/70">{tech}</span>}
+          <dt>Lab</dt>
+          <dd>Security@FIT</dd>
         </div>
-        <ExternalLink className="w-4 h-4 text-slate-600 group-hover:text-emerald-400" />
+        <div>
+          <dt>Partners</dt>
+          <dd>Red Hat Research</dd>
+        </div>
+        <div>
+          <dt>Open source</dt>
+          <dd>Latium</dd>
+        </div>
+      </dl>
+
+      <a href="https://github.com/Security-FIT/Latium" target="_blank" rel="noreferrer">
+        View Latium <ArrowUpRight size={16} />
+      </a>
+    </aside>
+  );
+}
+
+function SectionHeading({ eyebrow, title, description }) {
+  return (
+    <div className={`section-heading ${description ? '' : 'section-heading-compact'}`}>
+      <div className="section-index">
+        <small>{eyebrow}</small>
       </div>
-      <p className="text-slate-400 text-sm mt-1">{description}</p>
+      <h2>{title}</h2>
+      {description && <p>{description}</p>}
+    </div>
+  );
+}
+
+function ActivityList({ title, items, valueKey }) {
+  return (
+    <section className="activity-group">
+      <h3>{title}</h3>
+      <div className="activity-list">
+        {items.map((item, index) => (
+          <div className="activity-item" key={item.name}>
+            <span className="activity-number">{String(index + 1).padStart(2, '0')}</span>
+            <strong>{item.name}</strong>
+            <span className="activity-value">{item[valueKey]}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ProjectCard({ title, description, context, tech, href, index }) {
+  return (
+    <a href={href} target="_blank" rel="noreferrer" className="project-card">
+      <div className="project-topline">
+        <span>{String(index).padStart(2, '0')}</span>
+        <span>{context}</span>
+      </div>
+
+      <div className="project-copy">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </div>
+
+      <div className="project-footer">
+        <div className="tag-row">
+          {tech.map((item) => <span key={item}>{item}</span>)}
+        </div>
+        <ArrowUpRight size={20} />
+      </div>
     </a>
   );
 }
 
-function WriteupLink({ title, category, link }) {
+function ExperienceItem({ period, role, company, description, tags }) {
   return (
-    <a 
-      href={link}
-      className="flex items-center gap-4 p-3 -mx-3 rounded-lg hover:bg-slate-900 transition-colors group"
-    >
-      <div className="p-2 rounded bg-slate-900 text-emerald-500 group-hover:bg-emerald-500/10 transition-colors">
-        <FileText className="w-5 h-5" />
+    <article className="experience-item">
+      <div className="timeline-marker" />
+      <time>{period}</time>
+      <div className="experience-content">
+        <h3>{role}</h3>
+        <h4>{company}</h4>
+        <p>{description}</p>
+        <div className="tag-row">
+          {tags.map((tag) => <span key={tag}>{tag}</span>)}
+        </div>
       </div>
-      <div>
-        <h3 className="text-slate-200 font-medium group-hover:text-emerald-400 transition-colors">{title}</h3>
-        <p className="text-slate-500 text-xs font-mono mt-0.5">{category}</p>
-      </div>
-    </a>
+    </article>
   );
 }
 

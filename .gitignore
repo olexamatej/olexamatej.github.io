@@ -3,6 +3,8 @@ node_modules/
 
 # Build artifacts (temporary during build)
 public/blogs/
+public/site_libs/
+public/styles.css
 
 # Old Quarto files (no longer used)
 /.quarto/

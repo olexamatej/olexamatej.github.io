@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ChevronRight } from 'lucide-react';
 import { CHALLENGE_DIRECTORY_MAP } from './writeup-mappings';
+import { SiteFooter, SiteHeader } from './SiteChrome';
 
 const REPOS = [
   {
@@ -82,17 +83,6 @@ const REPOS = [
   }
 ];
 
-function NavLink({ href, children }) {
-  return (
-    <a 
-      href={href} 
-      className="text-slate-300 hover:text-emerald-400 transition-colors font-semibold"
-    >
-      {children}
-    </a>
-  );
-}
-
 function WriteupContent({ writeupId }) {
   const [content, setContent] = useState('');
   const [loading, setLoading] = useState(true);
@@ -121,17 +111,13 @@ function WriteupContent({ writeupId }) {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-slate-400">Loading writeup...</div>
-      </div>
+      <div className="reader-status">Loading writeup…</div>
     );
   }
 
   if (error) {
     return (
-      <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-6 text-red-400">
-        Error: {error}
-      </div>
+      <div className="reader-error">Could not load this writeup: {error}</div>
     );
   }
 
@@ -146,8 +132,13 @@ function WriteupContent({ writeupId }) {
       return url;
     }
     
-    // Extract repo name from writeupId
-    const repoName = writeupId.split('-')[0];
+    const repoName = writeupId.startsWith('pwnable-kr')
+      ? 'pwnable.kr'
+      : writeupId.startsWith('webhacking-kr')
+        ? 'webhacking.kr'
+        : writeupId.startsWith('lactf2025')
+          ? 'lactf2025'
+          : 'picoctf';
     const repoOwner = 'olexamatej';
     
     // Remove leading ./ or /
@@ -158,7 +149,7 @@ function WriteupContent({ writeupId }) {
   };
 
   return (
-    <div className="prose prose-invert prose-slate max-w-none">
+    <div className="writeup-prose prose prose-invert max-w-none">
       <ReactMarkdown
         components={{
           img: ({node, ...props}) => (
@@ -166,7 +157,7 @@ function WriteupContent({ writeupId }) {
               {...props} 
               src={transformImageUrl(props.src)} 
               alt={props.alt || 'Image'}
-              className="rounded-lg"
+              className="writeup-image"
             />
           )
         }}
@@ -202,73 +193,60 @@ export default function WriteupViewer({ selectedRepo, onBack }) {
   const currentWriteup = currentRepo?.writeups.find(w => w.id === selectedWriteup);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <div className="max-w-3xl mx-auto px-6 py-20">
-        {/* Navigation */}
-        <nav className="mb-12 flex gap-6">
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/index-blogs.html">Blog</NavLink>
-          <NavLink href="/writeups.html">CTF Writeups</NavLink>
-          <NavLink href="/index-projects.html">Projects</NavLink>
-        </nav>
-
-        {/* Back button */}
+    <div className="portfolio inner-page reader-page selection:bg-violet-300 selection:text-violet-950">
+      <SiteHeader active="writing" />
+      <main className="page-shell reader-main">
         <button
           onClick={onBack}
-          className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors mb-8 text-sm"
+          className="reader-back"
         >
-          <ArrowLeft className="w-4 h-4" />
-          Back to categories
+          <ArrowLeft size={16} /> Back to collections
         </button>
 
-        {/* Category Header */}
-        <div className="mb-8">
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> 
-            {currentRepo?.name || 'Select Writeup'}
-          </h2>
+        <div className="reader-heading">
+          <span className="card-kicker">{currentRepo?.name || 'Writeup archive'}</span>
+          <h1>{currentWriteup?.title || 'Select a writeup'}</h1>
+          <p>CTF challenge notes and solutions.</p>
         </div>
 
-        {/* Writeup Navigation */}
         {filteredRepos.length > 0 && (
-          <div className="mb-8">
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-              {filteredRepos.flatMap(repo => 
-                repo.writeups.map(writeup => (
-                  <button
-                    key={writeup.id}
-                    onClick={() => setSelectedWriteup(writeup.id)}
-                    className={`
-                      text-left px-3 py-2 rounded text-sm transition-colors
-                      ${
-                        selectedWriteup === writeup.id
-                          ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/50'
-                          : 'bg-slate-900/50 text-slate-400 hover:text-slate-200 border border-slate-800 hover:border-slate-700'
-                      }
-                    `}
-                  >
-                    {writeup.title}
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
+          <label className="challenge-select-wrap">
+            <span>Choose a writeup</span>
+            <select value={selectedWriteup || ''} onChange={(event) => setSelectedWriteup(event.target.value)}>
+              {filteredRepos.flatMap((repo) => repo.writeups.map((writeup) => (
+                <option key={writeup.id} value={writeup.id}>{writeup.title}</option>
+              )))}
+            </select>
+          </label>
         )}
 
-        {/* Content */}
-        {currentWriteup ? (
-          <div>
-            <h1 className="text-2xl font-bold text-white mb-6">
-              {currentWriteup.title}
-            </h1>
-            <WriteupContent writeupId={selectedWriteup} />
-          </div>
-        ) : (
-          <div className="p-8 text-center text-slate-400">
-            Select a writeup to view
-          </div>
-        )}
-      </div>
+        <div className="reader-layout">
+          <aside className="challenge-sidebar" aria-label="Writeups in this collection">
+            <span className="challenge-sidebar-label">In this collection</span>
+            {filteredRepos.flatMap((repo) => repo.writeups.map((writeup, index) => (
+              <button
+                type="button"
+                key={writeup.id}
+                onClick={() => setSelectedWriteup(writeup.id)}
+                className={selectedWriteup === writeup.id ? 'active' : ''}
+              >
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                {writeup.title}
+                <ChevronRight size={15} />
+              </button>
+            )))}
+          </aside>
+
+          <article className="writeup-document">
+            {currentWriteup ? (
+              <WriteupContent writeupId={selectedWriteup} />
+            ) : (
+              <div className="reader-empty">Select a writeup to view.</div>
+            )}
+          </article>
+        </div>
+      </main>
+      <SiteFooter />
     </div>
   );
 }

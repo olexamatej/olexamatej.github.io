@@ -1,139 +1,159 @@
 import React from 'react';
-import { BookOpen, ChevronRight, Github } from 'lucide-react';
+import {
+  ArrowUpRight,
+  Calendar,
+  ChevronRight,
+  Clock,
+  FileText,
+  Github,
+} from 'lucide-react';
+import { PageIntro, SiteFooter, SiteHeader } from './SiteChrome';
+
+const ARTICLES = [
+  {
+    id: 'strategist',
+    title: 'The Strategist',
+    description: 'Heap exploitation through an off-by-one vulnerability and tcache poisoning.',
+    date: 'May 2025',
+    readTime: '8 min read',
+    url: '/blogs/strategist.html',
+    category: 'Heap exploitation',
+  },
+  {
+    id: 'contractor',
+    title: 'The Contractor',
+    description: 'Stack pointer corruption used to bypass canaries in a hardened 64-bit binary.',
+    date: 'May 2025',
+    readTime: '10 min read',
+    url: '/blogs/contractor.html',
+    category: 'Binary exploitation',
+  },
+];
 
 const REPOS = [
   {
     id: 'pwnable-kr',
     name: 'pwnable.kr',
-    category: 'Binary Exploitation',
-    description: 'Binary exploitation and pwn challenges - one of my all time favs!',
+    category: 'Binary exploitation',
+    description: 'Stack corruption, heap behaviour, and Linux exploitation fundamentals.',
     url: 'https://github.com/olexamatej/pwnable.kr',
-    color: '#ef4444',
-    writeupCount: 13
+    writeupCount: 13,
+    level: 'Advanced',
   },
   {
     id: 'webhacking-kr',
     name: 'webhacking.kr',
-    category: 'Web Security',
-    description: 'Web security challenges covering XSS, SQL injection, and more',
+    category: 'Web security',
+    description: 'XSS, SQL injection, authentication bypasses, and browser-side puzzles.',
     url: 'https://github.com/olexamatej/webhacking.kr',
-    color: '#f59e0b',
-    writeupCount: 12
+    writeupCount: 12,
+    level: 'Intermediate',
   },
   {
     id: 'lactf2025',
     name: 'LA CTF 2025',
-    category: 'Mixed Challenges',
-    description: 'Advanced CTF challenges from LA CTF 2025 competition',
+    category: 'Mixed challenges',
+    description: 'Seven competition challenges spanning modern web and security techniques.',
     url: 'https://github.com/olexamatej/lactf2025',
-    color: '#ef4444',
-    writeupCount: 7
+    writeupCount: 7,
+    level: 'Advanced',
   },
   {
     id: 'picoctf',
     name: 'picoCTF',
-    category: 'Web Exploitation',
-    description: 'Web exploitation challenges from picoCTF',
+    category: 'Web exploitation',
+    description: 'Approachable web exploitation challenges with concise, practical solutions.',
     url: 'https://github.com/olexamatej/picoctf',
-    color: '#10b981',
-    writeupCount: 16
-  }
+    writeupCount: 16,
+    level: 'Beginner',
+  },
 ];
-
-function NavLink({ href, children }) {
-  return (
-    <a 
-      href={href} 
-      className="text-slate-300 hover:text-emerald-400 transition-colors font-semibold"
-    >
-      {children}
-    </a>
-  );
-}
 
 function RepoCard({ repo, onClick }) {
   return (
-    <div 
-      className="p-4 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-emerald-500/50 transition-colors cursor-pointer"
-      onClick={onClick}
-    >
-      <div className="flex items-start justify-between mb-3">
-        <div className="flex-1">
-          <h3 className="text-lg font-medium text-slate-200 mb-1">{repo.name}</h3>
-          <div className="text-slate-500 text-xs mb-2">{repo.category}</div>
+    <article className="repo-card">
+      <button type="button" className="repo-card-main" onClick={onClick}>
+        <div className="repo-card-topline">
+          <span>Open collection</span>
+          <ChevronRight size={20} />
         </div>
-        <div className="text-slate-500 text-xs">{repo.writeupCount} writeups</div>
-      </div>
-      
-      <p className="text-slate-400 text-sm mb-3">
-        {repo.description}
-      </p>
-      
-      <a
-        href={repo.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-emerald-400 hover:underline text-xs font-medium flex items-center gap-1"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <Github className="w-3 h-3" />
-        View on GitHub
+        <div>
+          <span className="card-kicker">{repo.category}</span>
+          <h2>{repo.name}</h2>
+          <p>{repo.description}</p>
+        </div>
+        <div className="repo-card-stats">
+          <span><strong>{repo.writeupCount}</strong> writeups</span>
+          <span>{repo.level}</span>
+        </div>
+      </button>
+      <a href={repo.url} target="_blank" rel="noreferrer" className="repo-github">
+        <Github size={15} /> Repository <ArrowUpRight size={14} />
       </a>
-    </div>
+    </article>
+  );
+}
+
+function ArticleCard({ article }) {
+  return (
+    <a href={article.url} className="article-card">
+      <div className="article-card-icon"><FileText size={22} /></div>
+      <div className="article-card-copy">
+        <span className="card-kicker">{article.category}</span>
+        <h2>{article.title}</h2>
+        <p>{article.description}</p>
+      </div>
+      <div className="article-card-meta">
+        <span><Calendar size={14} /> {article.date}</span>
+        <span><Clock size={14} /> {article.readTime}</span>
+      </div>
+      <ArrowUpRight className="article-card-arrow" size={21} />
+    </a>
   );
 }
 
 export default function WriteupLanding({ onSelectRepo }) {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-200">
-      <div className="max-w-3xl mx-auto px-6 py-20">
-        {/* Navigation */}
-        <nav className="mb-12 flex gap-6">
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/index-blogs.html">Blog</NavLink>
-          <NavLink href="/writeups.html">CTF Writeups</NavLink>
-          <NavLink href="/index-projects.html">Projects</NavLink>
-        </nav>
+    <div className="portfolio inner-page selection:bg-violet-300 selection:text-violet-950">
+      <div className="ambient ambient-one" aria-hidden="true" />
+      <SiteHeader active="writing" />
 
-        {/* Content */}
-        <div className="mb-12">
-          <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-            <span className="text-emerald-400">#</span> CTF Writeups
-          </h2>
-          <p className="text-slate-400 mb-8">
-            Check out different CTFs!
-          </p>
-        </div>
+      <main className="page-shell page-main">
+        <PageIntro
+          eyebrow="Writing"
+          count="2 articles · 48 writeups"
+          title="Articles and writeups."
+          description="Exploit walkthroughs and CTF challenge solutions."
+        />
 
-        {/* Cyberapocalypse Featured */}
-        <div className="mb-8">
-          <a
-            href="/index-blogs.html"
-            className="block p-4 rounded-lg border-2 border-purple-500/30 bg-purple-500/5 hover:border-purple-500/50 transition-colors"
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <h3 className="text-lg font-medium text-purple-300">Cyber Apocalypse</h3>
-              <span className="text-xs px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 border border-purple-400/30">
-                Featured
-              </span>
-            </div>
-            <p className="text-slate-400 text-sm">
-              Much more in-depth blog-style writeups covering advanced exploitation techniques, detailed methodology, and comprehensive analysis.
-            </p>
-          </a>
-        </div>
+        <section className="writing-group" aria-labelledby="articles-heading">
+          <header className="writing-group-heading">
+            <h2 id="articles-heading">Articles</h2>
+            <span>{ARTICLES.length}</span>
+          </header>
+          <div className="article-list">
+            {ARTICLES.map((article) => <ArticleCard key={article.id} article={article} />)}
+          </div>
+        </section>
 
-        {/* Repository List */}
-        <div className="space-y-4">
-          {REPOS.map(repo => (
-            <RepoCard 
-              key={repo.id} 
-              repo={repo} 
-              onClick={() => onSelectRepo(repo.id)}
-            />
-          ))}
-        </div>
-      </div>
+        <section className="writing-group" aria-labelledby="writeups-heading">
+          <header className="writing-group-heading">
+            <h2 id="writeups-heading">CTF collections</h2>
+            <span>48 writeups</span>
+          </header>
+          <div className="repo-grid" aria-label="Writeup collections">
+            {REPOS.map((repo) => (
+              <RepoCard
+                key={repo.id}
+                repo={repo}
+                onClick={() => onSelectRepo(repo.id)}
+              />
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <SiteFooter />
     </div>
   );
 }

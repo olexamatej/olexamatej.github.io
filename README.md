@@ -9,6 +9,14 @@ npm install
 npm run dev
 ```
 
+For a one-command local preview, run:
+
+```bash
+./scripts/run-local.sh
+```
+
+The script installs dependencies when needed and serves the homepage, projects, and unified writing archive at `http://127.0.0.1:5173`. Override the defaults with `HOST=0.0.0.0 PORT=4173 ./scripts/run-local.sh`.
+
 ## CTF Writeups
 
 The site features an interactive writeups viewer with sidebar navigation for browsing challenges from multiple repositories:
@@ -46,7 +54,7 @@ Access at `/writeups.html` to browse all 48 writeups with:
 ## Build
 
 ```bash
-npm run build:site
+npm run build
 ```
 
 Output will be in `docs/` directory. The build process automatically copies writeups to the public directory.
