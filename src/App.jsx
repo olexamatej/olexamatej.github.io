@@ -16,19 +16,19 @@ const socialLinks = [
     icon: Linkedin,
   },
   {
-    label: 'Email',
-    href: 'mailto:olexa.matej@gmail.com',
-    icon: Mail,
+    label: 'GitHub',
+    href: 'https://github.com/olexamatej',
+    icon: Github,
   },
   {
-    label: 'Twitter',
+    label: 'X / Twitter',
     href: 'https://x.com/metjuas',
     icon: Twitter,
   },
   {
-    label: 'GitHub',
-    href: 'https://github.com/olexamatej',
-    icon: Github,
+    label: 'Email',
+    href: 'mailto:olexa.matej@gmail.com',
+    icon: Mail,
   },
 ];
 
@@ -116,7 +116,7 @@ function App() {
         <section className="page-shell hero-section" id="overview">
           <div className="hero-copy">
             <div className="availability-pill">
-              <span>Security@FIT</span>
+              <span>Computer science</span>
               <span>Brno, Czechia</span>
             </div>
 
@@ -126,33 +126,30 @@ function App() {
             </h1>
 
             <p className="hero-lede">
-              Master&apos;s student at Brno University of Technology, researching LLM
-              forensics with Security@FIT.
+              Currently detecting fact editing in LLMs. I like learning new stuff.
             </p>
 
-            <p className="hero-interests">
-              <span>Interested in</span>
-              AI interpretability, unusual model behaviour, and cybersecurity.
-            </p>
+            <div className="hero-connect">
+              <span className="hero-connect-label">Connect with me</span>
+              <div className="hero-socials" aria-label="Contact and social links">
+                {socialLinks.map(({ label, href, icon: Icon }) => {
+                  const external = href.startsWith('http');
 
-            <div className="hero-socials" aria-label="Contact and social links">
-              {socialLinks.map(({ label, href, icon: Icon }) => {
-                const external = href.startsWith('http');
-
-                return (
-                  <a
-                    key={label}
-                    className="hero-social-link"
-                    href={href}
-                    target={external ? '_blank' : undefined}
-                    rel={external ? 'noreferrer' : undefined}
-                  >
-                    <Icon size={17} />
-                    <span>{label}</span>
-                    <ArrowUpRight size={14} />
-                  </a>
-                );
-              })}
+                  return (
+                    <a
+                      key={label}
+                      className="hero-social-link"
+                      href={href}
+                      target={external ? '_blank' : undefined}
+                      rel={external ? 'noreferrer' : undefined}
+                    >
+                      <Icon size={17} />
+                      <span>{label}</span>
+                      <ArrowUpRight size={14} />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
 
           </div>
@@ -169,9 +166,9 @@ function App() {
           <div className="experience-layout">
             <aside className="experience-aside">
               <span className="card-kicker">Education</span>
-              <h3>Year 4 of 5 at BUT</h3>
+              <h3>Final year of my master&apos;s</h3>
               <p>
-                MSc in AI &amp; Cybersecurity<br />
+                MSc in AI &amp; Cybersecurity · expected 2027<br />
                 BSc in Information Technology · 2025
               </p>
               <a href="https://www.fit.vut.cz/" target="_blank" rel="noreferrer">

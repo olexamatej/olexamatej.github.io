@@ -5,26 +5,32 @@
 :root {
   color-scheme: light;
 
-  --bg: #f1efe8;
-  --bg-deep: #17251f;
-  --surface: #f7f5ef;
-  --surface-raised: #fcfaf4;
-  --surface-soft: #e6e3da;
+  --bg: #f3f3f8;
+  --bg-deep: #211b38;
+  --surface: #f8f8fc;
+  --surface-raised: #fdfdff;
+  --surface-soft: #e7e6ef;
 
-  --text: #171a17;
-  --text-soft: #343a35;
-  --muted: #646b65;
-  --faint: #858b85;
+  --text: #1d1b27;
+  --text-soft: #3e3a4b;
+  --muted: #696575;
+  --faint: #898493;
 
-  --line: rgba(23, 26, 23, 0.17);
-  --line-strong: rgba(23, 26, 23, 0.38);
+  --line: rgba(29, 27, 39, 0.16);
+  --line-strong: rgba(29, 27, 39, 0.36);
 
-  --purple: #d64b33;
-  --purple-bright: #b93622;
-  --purple-soft: rgba(214, 75, 51, 0.1);
+  --purple: #7554d6;
+  --purple-bright: #5d3fbb;
+  --purple-soft: rgba(117, 84, 214, 0.11);
 
-  --accent: #175b45;
-  --accent-soft: rgba(23, 91, 69, 0.08);
+  --accent: #42648c;
+  --accent-soft: rgba(66, 100, 140, 0.09);
+
+  --deep-text: #f5f3ff;
+  --deep-muted: rgba(245, 243, 255, 0.68);
+  --deep-faint: rgba(245, 243, 255, 0.5);
+  --deep-line: rgba(245, 243, 255, 0.18);
+  --deep-accent: #b8a6ff;
 
   --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -70,7 +76,7 @@ select:focus-visible {
 
 ::selection {
   background: var(--purple);
-  color: var(--bg-deep);
+  color: #fff;
 }
 
 /* ----------------------------------------------------------------
@@ -136,7 +142,7 @@ main,
   top: 0;
   z-index: 50;
   border-bottom: 1px solid var(--line);
-  background: rgba(241, 239, 232, 0.92);
+  background: rgba(243, 243, 248, 0.92);
 }
 
 .nav-bar {
@@ -3439,7 +3445,72 @@ main,
 
 .portfolio .hero-socials {
   max-width: 590px;
-  margin-top: 30px;
+  margin-top: 12px;
+}
+
+.portfolio .hero-connect {
+  max-width: 590px;
+  margin-top: 34px;
+  padding: 21px 20px 0;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--purple);
+  background: var(--surface-raised);
+  box-shadow: 0 14px 38px rgba(45, 35, 78, 0.06);
+}
+
+.portfolio .hero-connect-label {
+  display: block;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: clamp(23px, 2vw, 29px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  line-height: 1;
+}
+
+.portfolio .hero-connect .hero-socials {
+  max-width: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 19px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.portfolio .hero-connect .hero-social-link,
+.portfolio .hero-connect .hero-social-link:first-child {
+  min-height: 54px;
+  padding: 14px 12px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font-size: 10px;
+}
+
+.portfolio .hero-connect .hero-social-link:nth-child(even) {
+  border-right: 0;
+}
+
+.portfolio .hero-connect .hero-social-link:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.portfolio .hero-connect .hero-social-link svg:first-child {
+  color: var(--purple-bright);
+}
+
+.portfolio .hero-connect .hero-social-link svg:last-child {
+  color: var(--faint);
+}
+
+.portfolio .hero-connect .hero-social-link:hover {
+  background: var(--purple-soft);
+  color: var(--purple-bright);
+}
+
+.portfolio .hero-connect .hero-social-link:hover svg:last-child {
+  color: var(--purple-bright);
 }
 
 .portfolio .current-panel {
@@ -3580,7 +3651,7 @@ main,
   padding: 14px;
   border: 1px solid var(--line-strong);
   background: var(--surface-raised);
-  box-shadow: 0 24px 70px rgba(23, 26, 23, 0.18);
+  box-shadow: 0 24px 70px rgba(45, 35, 78, 0.18);
   animation: contact-popover-in 150ms ease both;
 }
 
@@ -3841,6 +3912,88 @@ main,
 
 .portfolio .overview-writing > a > svg:last-child {
   color: var(--faint);
+}
+
+/* ----------------------------------------------------------------
+   Cool violet palette refinements
+   ---------------------------------------------------------------- */
+
+.portfolio::before {
+  background-image: linear-gradient(
+    90deg,
+    transparent calc(50% - 0.5px),
+    rgba(29, 27, 39, 0.035) 50%,
+    transparent calc(50% + 0.5px)
+  );
+}
+
+.portfolio .site-header {
+  background: rgba(243, 243, 248, 0.92);
+}
+
+.portfolio .nav-contact {
+  border: 1px solid var(--purple);
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 7px 20px rgba(72, 47, 145, 0.16);
+}
+
+.portfolio .nav-contact:hover {
+  border-color: var(--purple-bright);
+  background: var(--purple-bright);
+}
+
+.portfolio .current-panel,
+.portfolio .experience-aside,
+.portfolio .contact-section {
+  color: var(--deep-text);
+}
+
+.portfolio .current-panel-topline,
+.portfolio .current-facts,
+.portfolio .current-facts div + div,
+.portfolio .current-details,
+.portfolio .current-details div + div {
+  border-color: var(--deep-line);
+}
+
+.portfolio .current-panel .card-kicker,
+.portfolio .current-panel-topline > span:last-child,
+.portfolio .current-facts dt,
+.portfolio .current-details span {
+  color: var(--deep-faint);
+}
+
+.portfolio .current-panel-id,
+.portfolio .current-panel > a,
+.portfolio .experience-aside .card-kicker,
+.portfolio .experience-aside a,
+.portfolio .contact-section .card-kicker {
+  color: var(--deep-accent);
+}
+
+.portfolio .current-panel h2,
+.portfolio .current-facts dd,
+.portfolio .current-details strong,
+.portfolio .experience-aside h3,
+.portfolio .contact-section h2 {
+  color: var(--deep-text);
+}
+
+.portfolio .current-panel-main p,
+.portfolio .experience-aside p {
+  color: var(--deep-muted);
+}
+
+.portfolio .contact-button {
+  border-color: rgba(245, 243, 255, 0.34);
+  color: var(--deep-text);
+}
+
+.portfolio .contact-button:hover {
+  border-color: var(--deep-accent);
+  background: var(--deep-accent);
+  color: var(--bg-deep);
 }
 
 @media (max-width: 580px) {
