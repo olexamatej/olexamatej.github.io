@@ -36,7 +36,7 @@ const projects = [
   {
     title: 'Latium',
     description:
-      'Open-source tooling for causal tracing, weight intervention, and layer-level spectral analysis of edited language models.',
+      'Framework for fact editing of state-of-the-art models and reference-free forensic detection of these edits directly from model weights.',
     context: 'LLM security research',
     tech: ['Python', 'PyTorch', 'LLMs'],
     href: 'https://github.com/Security-FIT/Latium',
@@ -73,7 +73,7 @@ const experience = [
     role: 'LLM Security Researcher',
     company: 'Security@FIT · Red Hat Research',
     description:
-      'Detecting ROME and MEMIT knowledge edits in language models. Built Latium; research submitted to ACM CCS.',
+      'Detecting ROME and MEMIT knowledge edits in language models. Built Latium for fact editing and reference-free forensic detection from model weights.',
     tags: ['LLM forensics', 'PyTorch', 'Research'],
   },
   {
@@ -126,11 +126,23 @@ function App() {
             </h1>
 
             <p className="hero-lede">
-              Currently detecting fact editing in LLMs. I like learning new stuff.
+              Working on LLM forensics, model integrity, and detection of knowledge editing.
             </p>
 
             <div className="hero-connect">
-              <span className="hero-connect-label">Connect with me</span>
+              <div className="hero-connect-heading">
+                <span className="hero-connect-label">Connect with me</span>
+                <a
+                  className="hero-cv-link"
+                  href="/cv_olexa.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FileText size={16} />
+                  <span>CV</span>
+                  <ArrowUpRight size={14} />
+                </a>
+              </div>
               <div className="hero-socials" aria-label="Contact and social links">
                 {socialLinks.map(({ label, href, icon: Icon }) => {
                   const external = href.startsWith('http');

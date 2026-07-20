@@ -3477,6 +3477,36 @@ main,
   line-height: 1;
 }
 
+.portfolio .hero-connect-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.portfolio .hero-cv-link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 13px;
+  background: var(--bg-deep);
+  color: var(--deep-text);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.portfolio .hero-cv-link:hover {
+  background: var(--purple);
+  transform: translateY(-2px);
+}
+
 .portfolio .hero-connect .hero-socials {
   max-width: none;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4691,6 +4721,12 @@ main,
   .portfolio .hero-connect .hero-social-link:first-child {
     min-height: 64px;
     font-size: clamp(14px, 0.67vw, 18px);
+  }
+
+  .portfolio .hero-cv-link {
+    min-height: 50px;
+    padding: 13px 16px;
+    font-size: clamp(14px, 0.65vw, 18px);
   }
 
   .portfolio .current-panel h2 {

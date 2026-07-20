@@ -8,7 +8,7 @@
     "build": "npm run copy-writeups && vite build",
     "preview": "vite preview",
     "fetch-writeups": "python3 scripts/fetch-writeups.py",
-    "copy-writeups": "mkdir -p public/blogs && cp -r blogs/_includes public/blogs/ && cp docs/blogs/contractor.html docs/blogs/strategist.html public/blogs/ && cp -r docs/site_libs public/ && cp docs/styles.css public/styles.css"
+    "copy-writeups": "mkdir -p public/blogs && cp -r blogs/_includes public/blogs/ && cp docs/blogs/contractor.html docs/blogs/strategist.html public/blogs/ && cp -r docs/site_libs public/ && cp docs/styles.css public/styles.css && cp cv_olexa.pdf public/cv_olexa.pdf"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.19",
