@@ -576,3 +576,125 @@ td { border-color: var(--line) !important; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; }
 }
+
+/* Large-display reading scale */
+@media (min-width: 1500px) {
+  .navbar-container,
+  #quarto-content.quarto-container,
+  .article-site-footer {
+    width: min(1480px, calc(100% - 120px));
+  }
+
+  main.content#quarto-document-content {
+    width: min(100%, 1080px);
+    padding-block: 145px 170px !important;
+  }
+
+  #title-block-header::before,
+  .quarto-category,
+  .quarto-title-meta,
+  .quarto-title-meta-heading,
+  .quarto-title-meta-contents p,
+  .article-site-footer p,
+  .article-site-footer > div a {
+    font-size: 12px !important;
+  }
+
+  h1.title {
+    max-width: 1040px;
+    font-size: 78px !important;
+  }
+
+  .description {
+    max-width: 900px;
+    font-size: 19px;
+  }
+
+  h2 { font-size: 34px !important; }
+  h3 { font-size: 26px !important; }
+  h4 { font-size: 20px !important; }
+
+  p,
+  li,
+  dd {
+    font-size: 17px;
+  }
+
+  pre code,
+  code.sourceCode,
+  div.sourceCode code {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 2200px) {
+  .navbar-container,
+  #quarto-content.quarto-container,
+  .article-site-footer {
+    width: min(1900px, calc(100% - 180px));
+  }
+
+  main.content#quarto-document-content {
+    width: min(100%, 1280px);
+  }
+
+  h1.title {
+    max-width: 1220px;
+    font-size: 92px !important;
+  }
+
+  .description {
+    max-width: 1040px;
+    font-size: 22px;
+  }
+
+  h2 { font-size: 39px !important; }
+  h3 { font-size: 30px !important; }
+  h4 { font-size: 23px !important; }
+
+  p,
+  li,
+  dd {
+    font-size: 20px;
+  }
+
+  pre code,
+  code.sourceCode,
+  div.sourceCode code {
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 3000px) {
+  .navbar-container,
+  #quarto-content.quarto-container,
+  .article-site-footer {
+    width: min(2360px, calc(100% - 260px));
+  }
+
+  main.content#quarto-document-content {
+    width: min(100%, 1500px);
+  }
+
+  h1.title {
+    max-width: 1460px;
+    font-size: 108px !important;
+  }
+
+  .description {
+    max-width: 1250px;
+    font-size: 25px;
+  }
+
+  p,
+  li,
+  dd {
+    font-size: 22px;
+  }
+
+  pre code,
+  code.sourceCode,
+  div.sourceCode code {
+    font-size: 18px !important;
+  }
+}
