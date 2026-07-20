@@ -89,7 +89,7 @@ const experience = [
     role: 'BLE Security Researcher',
     company: 'Security@FIT',
     description:
-      'Built distributed ESP32 monitoring probes and neural BLE connection detectors with a 96% F1 score.',
+      'Built a distributed ESP32-based monitoring system and neural models for detecting BLE connection events from passive wireless traffic.',
     tags: ['BLE', 'Embedded systems', 'Machine learning'],
   },
 ];
