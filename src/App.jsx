@@ -5,6 +5,7 @@ import {
   Github,
   Linkedin,
   Mail,
+  Presentation,
   Twitter,
 } from 'lucide-react';
 import { SiteFooter, SiteHeader } from './SiteChrome';
@@ -132,16 +133,28 @@ function App() {
             <div className="hero-connect">
               <div className="hero-connect-heading">
                 <span className="hero-connect-label">Connect with me</span>
-                <a
-                  className="hero-cv-link"
-                  href="/cv_olexa.pdf"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FileText size={16} />
-                  <span>CV</span>
-                  <ArrowUpRight size={14} />
-                </a>
+                <div className="hero-resource-links">
+                  <a
+                    className="hero-cv-link"
+                    href="/cv_olexa.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FileText size={16} />
+                    <span>CV</span>
+                    <ArrowUpRight size={14} />
+                  </a>
+                  <a
+                    className="hero-cv-link"
+                    href="https://drive.google.com/file/d/1ucz8byKlW-tjEmYMgnzT0mZNbcYZOMHH/view?usp=sharing"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Presentation size={16} />
+                    <span>Presentation</span>
+                    <ArrowUpRight size={14} />
+                  </a>
+                </div>
               </div>
               <div className="hero-socials" aria-label="Contact and social links">
                 {socialLinks.map(({ label, href, icon: Icon }) => {
