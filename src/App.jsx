@@ -124,14 +124,14 @@ const speaking = [
 const hackathons = [
   {
     name: 'Rakathon',
-    result: 'Attended',
-    detail: 'AI hackathon against cancer · October 2026',
+    result: '2nd place in category',
+    detail: 'Nationwide AI hackathon against cancer · October 2026',
     href: 'https://www.rakathon.cz/',
   },
-  { name: 'BSEC 2025', result: 'Winner' },
+  { name: 'Codex Hackathon', result: '8th / 80 teams' },
   { name: 'BSEC 2026', result: 'Winner' },
+  { name: 'BSEC 2025', result: 'Winner' },
   { name: 'Second Foundation', result: '2nd place' },
-  { name: 'Codex Hackathon · Vienna', result: '9th / 80 teams' },
 ];
 
 function App() {
