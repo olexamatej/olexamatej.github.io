@@ -5,7 +5,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  Presentation,
   Twitter,
 } from 'lucide-react';
 import { SiteFooter, SiteHeader } from './SiteChrome';
@@ -95,6 +94,27 @@ const experience = [
   },
 ];
 
+const upcomingSpeaking = [
+  {
+    name: 'MAIDAY',
+    type: 'Workshop',
+    detail: '4–5 November 2026 · Brno',
+    href: 'https://maiday.cz/',
+  },
+  {
+    name: 'Cybercamp.ai',
+    type: 'Talk',
+    detail: '6 November 2026 · Brno',
+    href: 'https://cybercamp.ai/',
+  },
+  {
+    name: 'ML Prague',
+    type: 'Workshop',
+    detail: '3–5 May 2027 · Prague',
+    href: 'https://www.mlprague.com/',
+  },
+];
+
 const speaking = [
   { name: 'SantaCrypt', type: 'Security conference' },
   { name: 'Brno AI Meetup', type: 'AI meetup' },
@@ -102,6 +122,12 @@ const speaking = [
 ];
 
 const hackathons = [
+  {
+    name: 'Rakathon',
+    result: 'Attended',
+    detail: 'AI hackathon against cancer · October 2026',
+    href: 'https://www.rakathon.cz/',
+  },
   { name: 'BSEC 2025', result: 'Winner' },
   { name: 'BSEC 2026', result: 'Winner' },
   { name: 'Second Foundation', result: '2nd place' },
@@ -133,28 +159,16 @@ function App() {
             <div className="hero-connect">
               <div className="hero-connect-heading">
                 <span className="hero-connect-label">Connect with me</span>
-                <div className="hero-resource-links">
-                  <a
-                    className="hero-cv-link"
-                    href="/cv_olexa.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FileText size={16} />
-                    <span>CV</span>
-                    <ArrowUpRight size={14} />
-                  </a>
-                  <a
-                    className="hero-cv-link"
-                    href="https://drive.google.com/file/d/1ucz8byKlW-tjEmYMgnzT0mZNbcYZOMHH/view?usp=sharing"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Presentation size={16} />
-                    <span>Presentation</span>
-                    <ArrowUpRight size={14} />
-                  </a>
-                </div>
+                <a
+                  className="hero-cv-link"
+                  href="/cv_olexa.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FileText size={16} />
+                  <span>CV</span>
+                  <ArrowUpRight size={14} />
+                </a>
               </div>
               <div className="hero-socials" aria-label="Contact and social links">
                 {socialLinks.map(({ label, href, icon: Icon }) => {
@@ -212,12 +226,44 @@ function App() {
         <section className="section section-rule page-shell" id="elsewhere">
           <SectionHeading
             eyebrow="02 / Elsewhere"
-            title="Talks and hackathons."
+            title="Talks, hackathons & research."
           />
 
           <div className="activity-layout">
-            <ActivityList title="Spoke at" items={speaking} valueKey="type" />
-            <ActivityList title="Hackathon results" items={hackathons} valueKey="result" />
+            <div className="activity-column">
+              <ActivityList title="Upcoming talks & workshops" items={upcomingSpeaking} valueKey="type" />
+              <ActivityList title="Spoke at" items={speaking} valueKey="type" />
+            </div>
+            <div className="activity-column">
+              <ActivityList title="Hackathons" items={hackathons} valueKey="result" />
+              <article className="research-trip" aria-labelledby="taiwan-title">
+                <span className="card-kicker">Research trip · August 2026</span>
+                <h3 id="taiwan-title">Taiwan & HITCON</h3>
+                <p>
+                  I represented Security@FIT on a research trip to Taiwan, attending HITCON
+                  and sharing my LLM security research with universities and labs including
+                  Taiwan AI Labs, Panasonic Cybersecurity Lab, and Academia Sinica.
+                </p>
+                <div className="research-trip-links">
+                  <a
+                    className="inline-link"
+                    href="https://www.fit.vut.cz/fit/press/d378139/.en"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    FIT BUT recap <ArrowUpRight size={15} />
+                  </a>
+                  <a
+                    className="inline-link"
+                    href="https://mzv.gov.cz/taipei/en/economy_and_trade/czech_researchers_strengthen.html"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Czech office in Taipei <ArrowUpRight size={15} />
+                  </a>
+                </div>
+              </article>
+            </div>
           </div>
 
           <div className="overview-writing" aria-label="Featured writing">
@@ -322,7 +368,16 @@ function ActivityList({ title, items, valueKey }) {
         {items.map((item, index) => (
           <div className="activity-item" key={item.name}>
             <span className="activity-number">{String(index + 1).padStart(2, '0')}</span>
-            <strong>{item.name}</strong>
+            <div className="activity-copy">
+              <strong>
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {item.name} <ArrowUpRight size={15} aria-hidden="true" />
+                  </a>
+                ) : item.name}
+              </strong>
+              {item.detail && <span className="activity-detail">{item.detail}</span>}
+            </div>
             <span className="activity-value">{item[valueKey]}</span>
           </div>
         ))}

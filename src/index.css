@@ -3484,13 +3484,6 @@ main,
   gap: 24px;
 }
 
-.portfolio .hero-resource-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
-}
-
 .portfolio .hero-cv-link {
   flex: 0 0 auto;
   display: inline-flex;
@@ -3646,11 +3639,6 @@ main,
     align-items: flex-start;
     flex-direction: column;
     gap: 14px;
-  }
-
-  .portfolio .hero-resource-links {
-    width: 100%;
-    justify-content: flex-start;
   }
 
   .portfolio .hero-cv-link {
@@ -3833,6 +3821,13 @@ main,
   gap: clamp(52px, 8vw, 110px);
 }
 
+.activity-column {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 48px;
+}
+
 .activity-group > h3 {
   margin: 0 0 16px;
   color: var(--purple-bright);
@@ -3870,6 +3865,66 @@ main,
   letter-spacing: -0.03em;
 }
 
+.activity-copy {
+  min-width: 0;
+  padding-block: 16px;
+}
+
+.activity-copy strong a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.activity-copy strong a:hover {
+  color: var(--purple-bright);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.activity-copy strong a svg {
+  display: inline;
+  vertical-align: middle;
+}
+
+.activity-detail {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: clamp(13px, 0.65vw, 18px);
+  line-height: 1.6;
+}
+
+.research-trip {
+  padding-top: 24px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.research-trip h3 {
+  margin: 14px 0;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 1.6vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.research-trip p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: clamp(15px, 0.8vw, 22px);
+  line-height: 1.8;
+}
+
+.research-trip-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-top: 22px;
+}
+
+.research-trip-links .inline-link {
+  margin-top: 0;
+}
+
 .activity-value {
   color: var(--accent);
   font-family: var(--font-mono);
@@ -3905,6 +3960,10 @@ main,
     grid-template-columns: 28px minmax(0, 1fr);
     gap: 8px 12px;
     padding-block: 18px;
+  }
+
+  .activity-copy {
+    padding-block: 0;
   }
 
   .activity-value {
